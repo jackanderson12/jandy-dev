@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Jandy.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="Images/logo.png" alt="logo">
+        <ul class="menu">
+            <li><a href="#">Apps</a></li>
+            <li><a href="#">About Me</a></li>
+        </ul>
+        <div class="hamburger-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <button class="primary-button navbar-button">
+            <a href="#SignIn">Sign In</a>
+        </button>
+    </nav>
+    <!-- End of Navbar -->
+    <!-- Hero -->
+    <section class="hero">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="col-left">
+                    <h1>
+                        Hi, I'm Jack
+                    </h1>
+                    <p>
+                        I'm an iOS developer, specializing in Swift and SwiftUI.
+                        I also have experience with Swift full stack development, using Vapor, Leaf, HTML, and CSS.
+                    </p>
+                </div>
+                <div class="col-right">
+                    <img src="/Images/LinkedinProfilePhoto.jpeg" alt="" id="jack">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero -->
+    <!-- ChefM8 -->
+    <section class="chefm8-section">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="col-left">
+
+                </div>
+                <div class="col-right">
+                    <h2>ChefM8</h2>
+                    <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
+                    <p>
+                        ChefM8 is a recipe app that allows users to search for recipes, save recipes, and share recipes
+                        with their friend.
+                        It is built using SwiftUI and the Spoonacular API.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of ChefM8-->
+    <!-- Gamblit Section -->
+    <section class="gamblit-section">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="col-left">
+                    <h2>Gamblit</h2>
+                    <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
+                    <p>
+                        Gamblit is a scoial media and sports gambling visualization app. It creates a fun
+                        environment for users to share their gambles with their friends.
+                    </p>
+                </div>
+                <div class="col-right">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Gamblit -->
+</body>

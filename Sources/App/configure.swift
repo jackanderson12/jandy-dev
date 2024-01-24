@@ -1,5 +1,7 @@
 import Leaf
 import Vapor
+import Fluent
+import FluentPostgresDriver
 
 // configures your application
 public func configure(_ app: Application) async throws {
@@ -7,6 +9,20 @@ public func configure(_ app: Application) async throws {
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     app.views.use(.leaf)
+    
+    //Configure PostgreSQL database
+    if let databaseURL = Environment.get("DATABASE_URL") {
+        var tlsConfig: TLSConfiguration = .makeClientConfiguration()
+        tlsConfig.certificateVerification = .none
+        let nioSSLContext = try NIOSSLContext(configuration: tlsConfig)
+
+        var postgresConfig = try SQLPostgresConfiguration(url: databaseURL)
+        postgresConfig.coreConfiguration.tls = .require(nioSSLContext)
+
+        app.databases.use(.postgres(configuration: postgresConfig), as: .psql)
+    } else {
+        // ...
+    }
 
     
 

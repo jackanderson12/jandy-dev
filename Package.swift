@@ -13,8 +13,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", from: "4.2.4"),
         // 🐬 Fluent ORM framework for Swift.
         .package(url: "https://github.com/vapor/fluent.git", from: "4.0.0"),
-        // 🔵 Swift ORM (queries, models, relations, etc) built on PostgreSQL.
-        .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
+        // 🔵 Swift ORM (queries, models, relations, etc) built on SQLite.
+        .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
     ],
     targets: [
         .executableTarget(
@@ -23,7 +23,7 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "Fluent", package: "fluent"),
-                .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
+                .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
             ]
         ),
         .testTarget(name: "AppTests", dependencies: [
@@ -34,7 +34,7 @@ let package = Package(
             .product(name: "Vapor", package: "vapor"),
             .product(name: "Leaf", package: "leaf"),
             .product(name: "Fluent", package: "fluent"),
-            .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
+            .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
         ])
     ]
 )

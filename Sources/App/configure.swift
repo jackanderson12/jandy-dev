@@ -1,31 +1,25 @@
 import Leaf
 import Vapor
 import Fluent
-import FluentPostgresDriver
+import FluentSQLiteDriver
 
-// configures your application
+// Configures your application
 public func configure(_ app: Application) async throws {
-    // uncomment to serve files from /Public folder
+    // Serve files from the /Public folder
     app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
+    // Use Leaf for views
     app.views.use(.leaf)
     
-    //Configure PostgreSQL database
-    if let databaseURL = Environment.get("DATABASE_URL") {
-        var tlsConfig: TLSConfiguration = .makeClientConfiguration()
-        tlsConfig.certificateVerification = .none
-        let nioSSLContext = try NIOSSLContext(configuration: tlsConfig)
-
-        var postgresConfig = try SQLPostgresConfiguration(url: databaseURL)
-        postgresConfig.coreConfiguration.tls = .require(nioSSLContext)
-
-        app.databases.use(.postgres(configuration: postgresConfig), as: .psql)
-    } else {
-        // ...
-    }
-
+    // Configure in-memory SQLite database
+    app.databases.use(.sqlite(.memory), as: .sqlite)
     
+    // Run migrations
+    app.migrations.add(CreateBlogPost())
 
-    // register routes
+    // Run migrations automatically
+    try await app.autoMigrate()
+    
+    // Register routes
     try routes(app)
 }

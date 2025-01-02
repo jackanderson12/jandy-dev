@@ -15,8 +15,9 @@
     <nav class="navbar">
         <img src="Images/logo.png" alt="logo">
         <ul class="menu">
-            <li><a href="#">Apps</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a href="/apps">Apps</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/blog_posts">Blog</a></li>
         </ul>
         <div class="hamburger-button">
             <div class="bar"></div>

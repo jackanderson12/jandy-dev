@@ -34,6 +34,18 @@
     --secondary-text-size: 0.875rem; /* 14px */
     --secondary-text-height: 1.125rem; /* 18px */
     --button-size: 1rem; /* 16px */
+    
+    /* Border Properties */
+    --border-line-size: 0.1rem;
+    --border-size: 0.25rem;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Box Properties */
+    --box-shadow-none: 0;
+    --box-shadow-light: 0.25rem;
+    --box-shadow-md: 0.5rem;
 }
 
 /* GENERAL ELEMENT STYLES */

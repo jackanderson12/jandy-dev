@@ -28,4 +28,20 @@ class BlogPostController {
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
     }
+    
+    // Tech Blog Index
+    func techIndex(req: Request) throws -> EventLoopFuture<View> {
+        return BlogPost.query(on: req.db).all().flatMap { posts in
+            let context = ["posts": posts] // Passing data to the Leaf template
+            return req.view.render("tech_blog", context)
+        }
+    }
+    
+    //Lifestyle Blog Index
+    func lifestyleIndex(req: Request) throws -> EventLoopFuture<View> {
+        return BlogPost.query(on: req.db).all().flatMap { posts in
+            let context = ["posts": posts] // Passing data to the Leaf template
+            return req.view.render("lifestyle_blog", context)
+        }
+    }
 }

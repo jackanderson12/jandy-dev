@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Blog Posts</title>
+    <title>Tech Blog Posts</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/blog.css">
+    <link rel="stylesheet" href="/styles/tech_blog.css">
 </head>
 <body>
     <!-- Navbar -->
@@ -22,15 +22,6 @@
 
     <!-- Blog Posts Section -->
     <div class="section-container">
-        <div class="into-container">
-            <p>
-                I see this blog as a resource for myself and others to
-                gain insight on my learning and overall life experience.
-                In order to make the blog a bit more orderly I broke the
-                blog into 2 sections of tech and lifestyle. Each section
-                can be searched with the content lists, search bar, or tags.
-            </p>
-        </div>
         <div class="blog-container">
             <h3>Recent Blog Posts:</h3>
             <ul class="blog-list">

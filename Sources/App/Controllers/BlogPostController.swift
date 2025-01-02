@@ -29,19 +29,23 @@ class BlogPostController {
             .transform(to: .ok)
     }
     
-    // Tech Blog Index
     func techIndex(req: Request) throws -> EventLoopFuture<View> {
-        return BlogPost.query(on: req.db).all().flatMap { posts in
-            let context = ["posts": posts] // Passing data to the Leaf template
-            return req.view.render("tech_blog", context)
+            return BlogPost.query(on: req.db)
+                .filter(\.$tags ~~ "tech") // Assuming 'tags' contains the category
+                .all()
+                .flatMap { posts in
+                    let context = ["posts": posts]
+                    return req.view.render("blog_posts", context)
+                }
         }
-    }
-    
-    //Lifestyle Blog Index
+
     func lifestyleIndex(req: Request) throws -> EventLoopFuture<View> {
-        return BlogPost.query(on: req.db).all().flatMap { posts in
-            let context = ["posts": posts] // Passing data to the Leaf template
-            return req.view.render("lifestyle_blog", context)
-        }
+        return BlogPost.query(on: req.db)
+            .filter(\.$tags ~~ "lifestyle") // Assuming 'tags' contains the category
+            .all()
+            .flatMap { posts in
+                let context = ["posts": posts]
+                return req.view.render("blog_posts", context)
+            }
     }
 }

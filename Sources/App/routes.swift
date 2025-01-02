@@ -12,8 +12,8 @@ func routes(_ app: Application) throws {
     app.post("blog_posts", use: blogPostController.create) // Handle POST request
     app.delete("blog_posts", ":id", use: blogPostController.delete) // Handle DELETE request
     
-    app.get("blog_posts/tech", use: blogPostController.techIndex) // Render blog posts view
-    app.get("blog_posts/lifestyle", use: blogPostController.lifestyleIndex) // Render blog posts view
+    app.get("blog_posts", "tech", use: blogPostController.techIndex) // Render blog posts view
+    app.get("blog_posts", "lifestyle", use: blogPostController.lifestyleIndex) // Render blog posts view
 
     // About page
     app.get("about") { req in

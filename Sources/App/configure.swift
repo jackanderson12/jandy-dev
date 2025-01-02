@@ -11,8 +11,8 @@ public func configure(_ app: Application) async throws {
     // Use Leaf for views
     app.views.use(.leaf)
     
-    // Configure in-memory SQLite database
-    app.databases.use(.sqlite(.memory), as: .sqlite)
+    // Configure SQLite database with a file
+    app.databases.use(.sqlite(.file("Database/db.sqlite")), as: .sqlite)
     
     // Run migrations
     app.migrations.add(CreateBlogPost())

@@ -11,15 +11,17 @@
     <link rel="stylesheet" href="/styles/home.css">
 </head>
 <body>
-    <h1>Blog Posts</h1>
-    <ul>
-        #for(post in posts):
-        <li>
-            <h2>#(post.subject)</h2>
-            <p>#(post.body)</p>
-            <p><strong>Tags:</strong> #(post.tags)</p>
-        </li>
-        #endfor
-    </ul>
+    <div class="section-container">
+        <h2>Blog Posts</h2>
+        <ul>
+            #for(post in posts):
+            <li>
+                <h3>#(post.subject)</h3>
+                <p>#(post.body)</p>
+                <p><strong>Tags:</strong> #(post.tags)</p>
+            </li>
+            #endfor
+        </ul>
+    </div>
 </body>
 </html>

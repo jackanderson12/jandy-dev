@@ -21,14 +21,18 @@ final class BlogPost: Model, Content {
 
     @Field(key: "tags")
     var tags: String
+    
+    @Field(key: "imageData")
+    var imageData: [String]?
 
     init() { }
 
-    init(id: UUID? = nil, subject: String, body: String, tags: String) {
+    init(id: UUID? = nil, subject: String, body: String, tags: String, imageData: [String]?) {
         self.id = id
         self.subject = subject
         self.body = body
         self.tags = tags
+        self.imageData = imageData
     }
 }
 
@@ -39,6 +43,7 @@ struct CreateBlogPost: Migration {
             .field("subject", .string, .required)
             .field("body", .string, .required)
             .field("tags", .string, .required)
+            .field("imageData", .array(of: .string)) // Now stores multiple image filenames
             .create()
     }
 

@@ -38,6 +38,11 @@
                 <li class="blog-item">
                     <h4>#(post.subject)</h4>
                     <p>#(post.body)</p>
+                    <div class="blog-images">
+                        #for(image in post.imageData):
+                        <img src="/Images/#(image)" alt="Blog Image">
+                        #endfor
+                    </div>
                     <p><strong>Tags:</strong> #(post.tags)</p>
                 </li>
                 <hr>

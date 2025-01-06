@@ -1,4 +1,197 @@
-@import url('base.css');
+:root {
+    /* Base Font Size */
+    font-size: 16px; /* 1rem = 16px */
+    
+    /* Fonts */
+    --font-primary: 'Manrope', sans-serif;
+    
+    /* Colors */
+    --color-primary: #F6F4EB;
+    --color-secondary: #4682A9;
+    --color-tertiary: #91C8E4;
+    --color-quaternary: #749BC2;
+    
+    /* Spacing */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem;   /* 16px */
+    --spacing-lg: 2rem;   /* 32px */
+    --spacing-xl: 4rem;   /* 64px */
+    --standard-width: 75rem; /* 1200px */
+    
+    /* Text Sizing */
+    --h1-size: 5.875rem; /* 94px */
+    --h1-height: 6.75rem; /* 108px */
+    --h2-size: 4rem; /* 64px */
+    --h2-height: 5.3125rem; /* 85px */
+    --h3-size: 2.5rem; /* 40px */
+    --h4-size: 2rem; /* 32px */
+    --h5-size: 1.75rem; /* 28px */
+    --h6-size: 1.375rem; /* 22px */
+    --subtitle-size: 1.0625rem; /* 17px */
+    --subtitle-height: 1.625rem; /* 26px */
+    --p-size: 1.125rem; /* 18px */
+    --p-height: 1.625rem; /* 26px */
+    --secondary-text-size: 0.875rem; /* 14px */
+    --secondary-text-height: 1.125rem; /* 18px */
+    --button-size: 1rem; /* 16px */
+    
+    /* Border Properties */
+    --border-line-size: 0.1rem;
+    --border-size: 0.25rem;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Box Properties */
+    --box-shadow-none: 0;
+    --box-shadow-light: 0.25rem;
+    --box-shadow-md: 0.5rem;
+}
+
+/* GENERAL ELEMENT STYLES */
+html,
+body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    box-sizing: border-box;
+    padding: var(--spacing-sm) 0 0 0;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    margin: var(--spacing-xl) 0 0 0;
+}
+
+h1 {
+    font-family: var(--font-primary);
+    color: var(--color-quaternary);
+    font-weight: 600;
+    font-size: var(--h1-size);
+    margin: 0;
+    width: 100%;
+    letter-spacing: -1px;
+    line-height: var(--h1-height);
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: var(--h2-size);
+    margin: 0;
+    width: 100%;
+}
+
+h3 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: var(--h3-size);
+    margin: 0;
+    width: 100%;
+}
+
+h4 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: var(--h4-size);
+    margin: 0;
+    width: 100%;
+    letter-spacing: 0.25px;
+}
+
+h5 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: var(--h5-size);
+    margin: 0;
+    width: 100%;
+}
+
+h6 {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: var(--h6-size);
+    margin: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--bright-blue);
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--primary-accent);
+}
+
+p {
+    font-size: var(--p-size);
+    line-height: var(--p-height);
+    font-weight: 400;
+    margin: var(--spacing-md) 0;
+}
+
+/* Layout Styles  */
+.section-container {
+    margin: var(--spacing-xl) 0;
+    width: 100%;
+    max-width: var(--standard-width);
+}
+
+.two-column {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.two-column>.col-left {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-md) 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-column>.col-right {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 0 0 var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 0;
+}
+
+.card .icon {
+    height: 50px;
+    margin: 0 0 var(--spacing-sm) 0;
+}
+
 
 /* HERO */
 .hero {
@@ -63,7 +256,6 @@
 
 /* CHEFM8 SECTION */
 .chefm8-section {
-    margin: var(--spacing-xl) 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -83,7 +275,6 @@
 
 /* GAMBLIT SECTION */
 .gamblit-section {
-    margin: var(--spacing-xl) 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -98,5 +289,23 @@
 
 .gamblit-section a {
     color: var(--color-quaternary);
+    text-decoration: underline;
+}
+/* ROEBLING SECTION */
+.roebling-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-quaternary);
+    text-align: center;
+}
+
+.roebling-section h2 {
+    color: var(--color-primary);
+}
+
+.roebling-section a {
+    color: var(--color-primary);
     text-decoration: underline;
 }

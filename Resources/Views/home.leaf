@@ -21,12 +21,20 @@
             <li><a href="/blog_posts">Blog</a></li>
         </ul>
         <!-- Mobile Menu Button -->
-        <div class="hamburger-button">
+        <div class="hamburger-button" onclick="toggleMobileMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        <script src="/Javascript/home.js"></script>
         <!-- End Mobile Menu Button -->
+        <!-- Hidden Mobile Menu -->
+        <ul class="mobile-menu">
+            <li><a href="/apps">Apps</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/blog_posts">Blog</a></li>
+        </ul>
+        <!-- End Hidden Mobile Menu -->
         <button class="primary-button navbar-button">
             <a href="#SignIn">Sign In</a>
         </button>

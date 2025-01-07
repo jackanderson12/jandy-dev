@@ -6,10 +6,11 @@
     --font-primary: 'Manrope', sans-serif;
     
     /* Colors */
-    --color-primary: #F6F4EB; /* Cream */
-    --color-secondary: #4682A9; /* Light Blue */
-    --color-tertiary: #91C8E4; 
-    --color-quaternary: #749BC2;
+    --color-primary: hsl(49, 38%, 94%); /* Cream */
+    --color-primary-with-opacity: hsla(49, 38%, 94% , 0.9); /* Cream with Opacity */
+    --color-secondary: hsl(204, 41%, 47%); /* Light Blue */
+    --color-tertiary: hsl(200, 61%, 73%); /* Pale Lighter Blue */
+    --color-quaternary: hsl(210, 39%, 61%); /* Light Navy Blue */
     
     /* Spacing */
     --spacing-xs: 0.25rem; /* 4px */
@@ -20,8 +21,8 @@
     --standard-width: 75rem; /* 1200px */
     
     /* Text Sizing */
-    --h1-size: 5.875rem; /* 94px */
-    --h1-height: 6.75rem; /* 108px */
+    --h1-size: 5.3125rem; /* 85px */
+    --h1-height: 5.875rem; /* 94px */
     --h2-size: 4rem; /* 64px */
     --h2-height: 5.3125rem; /* 85px */
     --h3-size: 2.5rem; /* 40px */
@@ -52,6 +53,9 @@
     --hamburger-height: 0.65rem;
     --hamburger-width: 3.5rem;
     --hamburger-border-radius: 0.35rem;
+    
+    /* Navbar Styling */
+    --navbar-height: 6rem;
 }
 
 /* GENERAL ELEMENT STYLES */

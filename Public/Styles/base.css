@@ -6,12 +6,13 @@
     --font-primary: 'Manrope', sans-serif;
     
     /* Colors */
-    --color-primary: #F6F4EB;
-    --color-secondary: #4682A9;
-    --color-tertiary: #91C8E4;
+    --color-primary: #F6F4EB; /* Cream */
+    --color-secondary: #4682A9; /* Light Blue */
+    --color-tertiary: #91C8E4; 
     --color-quaternary: #749BC2;
     
     /* Spacing */
+    --spacing-xs: 0.25rem; /* 4px */
     --spacing-sm: 0.5rem; /* 8px */
     --spacing-md: 1rem;   /* 16px */
     --spacing-lg: 2rem;   /* 32px */
@@ -46,6 +47,11 @@
     --box-shadow-none: 0;
     --box-shadow-light: 0.25rem;
     --box-shadow-md: 0.5rem;
+    
+    /* Hamburger Button */
+    --hamburger-height: 0.65rem;
+    --hamburger-width: 3.5rem;
+    --hamburger-border-radius: 0.35rem;
 }
 
 /* GENERAL ELEMENT STYLES */

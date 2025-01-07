@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Jandy.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -18,11 +20,13 @@
             <li><a href="/about">About Me</a></li>
             <li><a href="/blog_posts">Blog</a></li>
         </ul>
+        <!-- Mobile Menu Button -->
         <div class="hamburger-button">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        <!-- End Mobile Menu Button -->
         <button class="primary-button navbar-button">
             <a href="#SignIn">Sign In</a>
         </button>

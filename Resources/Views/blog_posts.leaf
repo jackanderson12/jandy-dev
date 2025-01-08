@@ -23,7 +23,7 @@
 
     <!-- Blog Posts Section -->
     <div class="section-container">
-        <div class="into-container">
+        <div class="intro-container">
             <p>
                 I see this blog as a resource for myself and others to
                 gain insight on my learning and overall life experience.
@@ -34,9 +34,9 @@
         </div>
         <div class="blog-container">
             <h3>Recent Blog Posts:</h3>
-            <ul class="blog-list">
+            <div class="blog-list">
                 #for(post in posts):
-                <li class="blog-item">
+                <div class="blog-item">
                     <h4>#(post.subject)</h4>
                     <p>#(post.body)</p>
                     <div class="blog-images">
@@ -45,7 +45,7 @@
                         #endfor
                     </div>
                     <p><strong>Tags:</strong> #(post.tags)</p>
-                </li>
+                </div>
                 <hr>
                 #endfor
             </ul>

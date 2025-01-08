@@ -21,7 +21,7 @@
     }
     
     .navbar img {
-        width: 6.25rem;
+        max-width: 6.25rem;
     }
     
     .menu {
@@ -61,7 +61,7 @@
         text-align: center;
         padding: 0; /* Remove unnecessary padding */
         margin: 0;  /* Remove unnecessary margin */
-        background-color: var(--color-primary-with-opacity); 
+        background-color: var(--color-primary-with-opacity);
     }
 
     /* Mobile Menu Items */
@@ -100,7 +100,8 @@
     }
     
     .navbar img {
-        width: 6.25rem;
+        width: var(--navbar-image-width);
+        height: var(--navbar-image-height);
     }
     
     .menu {
@@ -135,7 +136,12 @@
     .hamburger-button {
         display: none;
     }
+    
+    .mobile-menu {
+        display: none;
+    }
 }
+
 
 /* HERO */
 /* Mobile Styling */

@@ -25,11 +25,11 @@
     <div class="section-container">
         <div class="intro-container">
             <p>
-                I see this blog as a resource for myself and others to
-                gain insight on my learning and overall life experience.
-                In order to make the blog a bit more orderly I broke the
-                blog into 2 sections of tech and lifestyle. Each section
-                can be searched with the content lists, search bar, or tags.
+            I see this blog as a resource for myself and others to
+            gain insight on my learning and overall life experience.
+            In order to make the blog a bit more orderly I broke the
+            blog into 2 sections of tech and lifestyle. Each section
+            can be searched with the content lists, search bar, or tags.
             </p>
         </div>
         <div class="blog-container">
@@ -48,7 +48,7 @@
                 </div>
                 <hr>
                 #endfor
-            </ul>
+            </div>
         </div>
     </div>
 </body>

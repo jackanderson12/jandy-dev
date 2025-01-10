@@ -18,23 +18,62 @@
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
+            <li><a href="/blog_posts">All</a></li>
         </ul>
     </nav>
-
+    
+    <div class="catergory-container">
+        <ul class="menu">
+            <li>
+                #if(selectedCategory == "all"):
+                <a href="/blog_posts/lifestyle" class="active">All</a>
+                #else:
+                <a href="/blog_posts/lifestyle">All</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "travel"):
+                <a href="/blog_posts/lifestyle/travel" class="active">Travel</a>
+                #else:
+                <a href="/blog_posts/lifestyle/travel">Travel</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "food_drink"):
+                <a href="/blog_posts/lifestyle/food_drink" class="active">Food and Drink</a>
+                #else:
+                <a href="/blog_posts/lifestyle/food_drink">Food and Drink</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "editorial"):
+                <a href="/blog_posts/lifestyle/editorial" class="active">Editorial</a>
+                #else:
+                <a href="/blog_posts/lifestyle/editorial">Editorial</a>
+                #endif
+            </li>
+        </ul>
+    </div>
+    
     <!-- Blog Posts Section -->
     <div class="section-container">
         <div class="blog-container">
             <h3>Recent Blog Posts:</h3>
-            <ul class="blog-list">
+            <div class="blog-list">
                 #for(post in posts):
-                <li class="blog-item">
+                <div class="blog-item">
                     <h4>#(post.subject)</h4>
                     <p>#(post.body)</p>
+                    <div class="blog-images">
+                        #for(image in post.imageData):
+                        <img src="/Images/#(image)" alt="Blog Image">
+                        #endfor
+                    </div>
                     <p><strong>Tags:</strong> #(post.tags)</p>
-                </li>
+                </div>
                 <hr>
                 #endfor
-            </ul>
+            </div>
         </div>
     </div>
 </body>

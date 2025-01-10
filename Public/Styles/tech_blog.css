@@ -1,5 +1,10 @@
 @import url('base.css');
 
+body {
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -13,7 +18,7 @@
 }
 
 .navbar img {
-    width: 100px;
+    width: var(--navbar-image-width);
 }
 
 .menu {
@@ -36,37 +41,70 @@
 .navbar-button {
     background: var(--color-tertiary);
     border: none;
-    border-radius: 10px;
-    width: 80px;
-    height: 25px;
+    border-radius: var(--border-radius-sm);
+    width: 5rem;
+    height: 2rem;
 }
 
 .navbar-button:hover {
     background: var(--color-quaternary);
 }
 
+/* Catergory Container */
+.catergory-container {
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+.catergory-container .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: var(--spacing-md) var(--spacing-md);
+}
+
+.catergory-container .menu li {
+    margin: 0 var(--spacing-md);
+}
+
+.catergory-container .menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-primary-muted);
+    padding: var(--spacing-md) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for the active/selected category */
+.catergory-container .menu a.active,
+.catergory-container .menu a:focus,
+.catergory-container .menu a:hover {
+    color: hsla(0, 0%, 100%, 1);
+    text-shadow: 0 0 0.5rem hsla(0, 0%, 100%, 0.8);
+}
+
 /* Blog Container */
-.blog-container {
-    h3 {
-        font-weight: 600;
-    }
+.blog-container h3 {
+    font-weight: 600;
 }
 
 /* Blog List */
 .blog-list {
     list-style: none;
-    hr {
-        border-top: var(--border-line-size) solid var(--color-secondary);
-    }
+}
+.blog-list hr {
+    border-top: var(--border-line-size) solid var(--color-secondary);
 }
 
 /* Blog Item */
 .blog-item {
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-sm);
-    background-color: var(--color-primary);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    h4 {
-        color: var(--color-secondary);
-    }
+}
+
+.blog-item h4 {
+    color: var(--color-secondary);
 }

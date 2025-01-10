@@ -34,7 +34,7 @@
     }
     
     .navbar-button {
-        background: var(--color-tertiary);
+        background: var(--color-quaternary);
         border: none;
         border-radius: var(--border-radius-sm);
         width: 5rem;
@@ -50,10 +50,8 @@
     }
     
     /* Blog Container */
-    .blog-container {
-        h3 {
-            font-weight: 600;
-        }
+    .blog-container h3 {
+        font-weight: 600;
     }
 
     /* Blog List */
@@ -123,9 +121,9 @@
     .navbar-button {
         background: var(--color-tertiary);
         border: none;
-        border-radius: 10px;
-        width: 80px;
-        height: 25px;
+        border-radius: var(--border-radius-sm);
+        width: 5rem;
+        height: 2rem;
     }
     
     .navbar-button:hover {

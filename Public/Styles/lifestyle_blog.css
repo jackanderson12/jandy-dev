@@ -1,5 +1,10 @@
 @import url('base.css');
 
+body {
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -24,7 +29,7 @@
 }
 
 .menu a {
-    color: var(--color-secondary);
+    color: var(--color-tertiary);
     margin: 0 var(--spacing-md);
     font-weight: bold;
 }
@@ -43,6 +48,41 @@
 
 .navbar-button:hover {
     background: var(--color-quaternary);
+}
+
+/* Catergory Container */
+.catergory-container {
+    text-align: center;
+    margin: var(--spacing-md) 0;
+}
+
+.catergory-container .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: var(--spacing-md) var(--spacing-md);
+}
+
+.catergory-container .menu li {
+    margin: 0 var(--spacing-md);
+}
+
+.catergory-container .menu a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-primary-muted);
+    padding: var(--spacing-md) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for the active/selected category */
+.catergory-container .menu a.active,
+.catergory-container .menu a:focus,
+.catergory-container .menu a:hover {
+    color: hsla(0, 0%, 100%, 1);
+    text-shadow: 0 0 0.5rem hsla(0, 0%, 100%, 0.8);
 }
 
 /* Blog Container */

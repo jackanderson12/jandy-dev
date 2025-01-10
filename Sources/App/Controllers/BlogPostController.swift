@@ -16,7 +16,7 @@ class BlogPostController {
             var subject: String
             var body: String
             var tags: String
-            var files: [File]  // Accepts multiple images
+            var files: [File]   // Accepts multiple images
         }
 
         let input = try req.content.decode(Input.self)
@@ -26,7 +26,7 @@ class BlogPostController {
             let blogPost = BlogPost(
                 subject: input.subject,
                 body: input.body,
-                tags: input.tags,
+                tags: input.tags,  // Now storing tags as an array
                 imageData: storedFilenames
             )
             return blogPost.save(on: req.db).map { blogPost }
@@ -80,23 +80,37 @@ class BlogPostController {
 
     // Fetch blog posts for the "tech" category
     func techIndex(req: Request) throws -> EventLoopFuture<View> {
+        let subcategory = req.parameters.get("subcategory") ?? "all"
+        
         return BlogPost.query(on: req.db)
-            .filter(\.$tags ~~ "tech") // Assuming 'tags' contains the category
+            .group(.and) { query in
+                query.filter(\.$tags ~~ "tech") // Primary tech category
+                if subcategory != "all" {
+                    query.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                }
+            }
             .all()
             .flatMap { posts in
                 let context = ["posts": posts]
-                return req.view.render("blog_posts", context)
+                return req.view.render("tech_blog", context)
             }
     }
 
     // Fetch blog posts for the "lifestyle" category
     func lifestyleIndex(req: Request) throws -> EventLoopFuture<View> {
+        let subcategory = req.parameters.get("subcategory") ?? "all"
+        
         return BlogPost.query(on: req.db)
-            .filter(\.$tags ~~ "lifestyle") // Assuming 'tags' contains the category
+            .group(.and) { query in
+                query.filter(\.$tags ~~ "lifestyle") // Primary tech category
+                if subcategory != "all" {
+                    query.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                }
+            }
             .all()
             .flatMap { posts in
                 let context = ["posts": posts]
-                return req.view.render("blog_posts", context)
+                return req.view.render("lifestyle_blog", context)
             }
     }
 }

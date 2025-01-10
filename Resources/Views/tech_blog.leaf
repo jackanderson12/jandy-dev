@@ -18,23 +18,69 @@
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
+            <li><a href="/blog_posts">All</a></li>
         </ul>
     </nav>
+    
+    <div class="catergory-container">
+        <ul class="menu">
+            <li>
+                #if(selectedCategory == "all"):
+                <a href="/blog_posts/tech" class="active">All</a>
+                #else:
+                <a href="/blog_posts/tech">All</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "data_structures_algorithms"):
+                <a href="/blog_posts/tech/data_structures_algorithms" class="active">Data Structures and Algorithms</a>
+                #else:
+                <a href="/blog_posts/tech/data_structures_algorithms">Data Structures and Algorithms</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "dev_ops"):
+                <a href="/blog_posts/tech/dev_ops" class="active">Dev Ops</a>
+                #else:
+                <a href="/blog_posts/tech/dev_ops">Dev Ops</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "math"):
+                <a href="/blog_posts/tech/math" class="active">Math</a>
+                #else:
+                <a href="/blog_posts/tech/math">Math</a>
+                #endif
+            </li>
+            <li>
+                #if(selectedCategory == "projects"):
+                <a href="/blog_posts/tech/projects" class="active">Projects</a>
+                #else:
+                <a href="/blog_posts/tech/projects">Projects</a>
+                #endif
+            </li>
+        </ul>
+    </div>
 
     <!-- Blog Posts Section -->
     <div class="section-container">
         <div class="blog-container">
             <h3>Recent Blog Posts:</h3>
-            <ul class="blog-list">
+            <div class="blog-list">
                 #for(post in posts):
-                <li class="blog-item">
+                <div class="blog-item">
                     <h4>#(post.subject)</h4>
                     <p>#(post.body)</p>
+                    <div class="blog-images">
+                        #for(image in post.imageData):
+                        <img src="/Images/#(image)" alt="Blog Image">
+                        #endfor
+                    </div>
                     <p><strong>Tags:</strong> #(post.tags)</p>
-                </li>
+                </div>
                 <hr>
                 #endfor
-            </ul>
+            </div>
         </div>
     </div>
 </body>

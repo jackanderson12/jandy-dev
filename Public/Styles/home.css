@@ -21,7 +21,7 @@
     }
     
     .navbar img {
-        max-width: 6.25rem;
+        max-width: var(--navbar-image-width);
     }
     
     .menu {
@@ -122,11 +122,11 @@
     }
     
     .navbar-button {
-        background: var(--color-tertiary);
-        border: none;
-        border-radius: 10px;
-        width: 80px;
-        height: 25px;
+        color: var(--color-tertiary);
+        background: var(--color-primary);
+        border: var(--border-line-size) solid var(--color-quaternary);
+        width: 5rem;
+        height: 2rem;
     }
     
     .navbar-button:hover {

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/Styles/base.css">
+    <link rel="stylesheet" href="/Styles/about.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/"><img src="/Images/logo.png" alt="logo"></a>
+        <ul class="menu">
+            <li><a href="/apps">Apps</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/blog_posts">Blog</a></li>
+        </ul>
+        <!-- Mobile Menu Button -->
+        <div class="hamburger-button" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <script src="/Javascript/home.js"></script>
+        <!-- End Mobile Menu Button -->
+        <!-- Hidden Mobile Menu -->
+        <ul class="mobile-menu">
+            <li><a href="/apps">Apps</a></li>
+            <li><a href="/about">About Me</a></li>
+            <li><a href="/blog_posts">Blog</a></li>
+        </ul>
+        <!-- End Hidden Mobile Menu -->
+    </nav>
+    <!-- End of Navbar -->
+    <div class="about">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="col-left">
+                    <h1>
+                        About Me, Jack
+                    </h1>
+                    <p>
+                        At the moment, I am a solo developer focusing my free time outside of my full-time job as a systems engineer on Swift development. I chose Swift because I have always wanted to create iPhone apps and take advantage of the newest features Apple releases. Fortunately, once I started down the Swift and SwiftUI path, I realized just how much can be accomplished with Swift—such as building this very website. My work background has given me the opportunity to explore many new and interesting technologies, and adding iOS and full-stack development to my skill set has deepened my understanding of how much goes into every application we use daily.
+                    </p>
+                    <p>
+                        Outside of my pre- and post-work coding, I enjoy playing sports, learning, cooking, and spending time with friends. I single out sports because I believe they played a key role in shaping my work ethic and personal development. I played Division III football at Christopher Newport University, where I was a team captain both my junior and senior years. During my time at Christopher Newport, I earned a bachelor’s degree in Computer Engineering.
+                    </p>
+                    <p>
+                        Since graduating, I have been living in the DC Metro area, where I grew up. Whenever possible, I love to travel and explore different regions of the country and the world.
+                    </p>
+                    <p>
+                        Please feel free to contact me using the form below. Messages will go to an inbox that I check regularly. Thanks!
+                    </p>
+                </div>
+                <div class="col-right">
+                    <img src="/Images/LinkedinProfilePhoto.jpeg" alt="" id="jack">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

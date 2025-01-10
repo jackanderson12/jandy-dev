@@ -81,7 +81,7 @@ class BlogPostController {
     // Fetch blog posts for the "tech" category
     func techIndex(req: Request) throws -> EventLoopFuture<View> {
         let subcategory = req.parameters.get("subcategory") ?? "all"
-        
+
         return BlogPost.query(on: req.db)
             .group(.and) { query in
                 query.filter(\.$tags ~~ "tech") // Primary tech category
@@ -91,7 +91,7 @@ class BlogPostController {
             }
             .all()
             .flatMap { posts in
-                let context = ["posts": posts]
+                let context = BlogContext(posts: posts, subcategory: subcategory)
                 return req.view.render("tech_blog", context)
             }
     }
@@ -109,7 +109,7 @@ class BlogPostController {
             }
             .all()
             .flatMap { posts in
-                let context = ["posts": posts]
+                let context = BlogContext(posts: posts, subcategory: subcategory)
                 return req.view.render("lifestyle_blog", context)
             }
     }

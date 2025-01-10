@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/Styles/base.css">
     <link rel="stylesheet" href="/Styles/home.css">
 </head>
 
@@ -16,7 +17,7 @@
     <nav class="navbar">
         <img src="Images/logo.png" alt="logo">
         <ul class="menu">
-            <li><a href="/apps">Apps</a></li>
+            <li><a href="/app/chefm8">Apps</a></li>
             <li><a href="/about">About Me</a></li>
             <li><a href="/blog_posts">Blog</a></li>
         </ul>
@@ -30,7 +31,7 @@
         <!-- End Mobile Menu Button -->
         <!-- Hidden Mobile Menu -->
         <ul class="mobile-menu">
-            <li><a href="/apps">Apps</a></li>
+            <li><a href="/app/chefm8">Apps</a></li>
             <li><a href="/about">About Me</a></li>
             <li><a href="/blog_posts">Blog</a></li>
         </ul>
@@ -75,6 +76,7 @@
                         with their friend.
                         It is built using SwiftUI and the Spoonacular API.
                     </p>
+                    <a href="/app/chefm8">more info...</a>
                 </div>
             </div>
         </div>
@@ -91,6 +93,7 @@
                         Gamblit is a scoial media and sports gambling visualization app. It creates a fun
                         environment for users to share their gambles with their friends.
                     </p>
+                    <a href="/app/gamblit">more info...</a>
                 </div>
                 <div class="col-right">
 
@@ -107,6 +110,7 @@
             <p>
                 Roebling is a web application to help small businesses secure loans for crucial equipment.
             </p>
+            <a href="/app/roebling">more info...</a>
         </div>
     </section>
 </body>

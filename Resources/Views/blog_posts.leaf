@@ -33,7 +33,7 @@
             </p>
         </div>
         <div class="blog-container">
-            <h3>Recent Blog Posts:</h3>
+            <h6>Recent Blog Posts:</h6>
             <div class="blog-list">
                 #for(post in posts):
                 <div class="blog-item">

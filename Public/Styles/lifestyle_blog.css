@@ -13,12 +13,12 @@ body {
     width: 100%;
     max-width: var(--standard-width);
     padding: 0 var(--spacing-md);
-    margin: 0 0 var(--spacing-xl) 0;
+    margin: 0 0 var(--spacing-md) 0;
     box-sizing: border-box;
 }
 
 .navbar img {
-    width: 100px;
+    width: var(--navbar-image-width);
 }
 
 .menu {
@@ -41,9 +41,9 @@ body {
 .navbar-button {
     background: var(--color-tertiary);
     border: none;
-    border-radius: 10px;
-    width: 80px;
-    height: 25px;
+    border-radius: var(--border-radius-sm);
+    width: 5rem;
+    height: 2rem;
 }
 
 .navbar-button:hover {
@@ -53,26 +53,29 @@ body {
 /* Catergory Container */
 .catergory-container {
     text-align: center;
-    margin: var(--spacing-md) 0;
+    margin: var(--spacing-xs) 0;
+    max-width: 100%;
 }
 
 .catergory-container .menu {
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: var(--spacing-md) var(--spacing-md);
+    padding: var(--spacing-xs);
 }
 
 .catergory-container .menu li {
-    margin: 0 var(--spacing-md);
+    margin: 0 auto;
 }
 
 .catergory-container .menu a {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     color: var(--color-primary-muted);
-    padding: var(--spacing-md) var(--spacing-md);
+    padding: 0;
     border-radius: var(--border-radius-sm);
     transition: background-color 0.3s, color 0.3s;
 }

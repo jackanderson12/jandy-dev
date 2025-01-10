@@ -3,6 +3,8 @@ import Vapor
 func routes(_ app: Application) throws {
     let homeController = HomeController()
     let blogPostController = BlogPostController()
+    let aboutController = AboutController()
+    let appController = AppController()
     
     // Home page
     app.get(use: homeController.index)
@@ -20,8 +22,9 @@ func routes(_ app: Application) throws {
 
 
     // About page
-    app.get("about") { req in
-        return "About Me!"
-    }
+    app.get("about", use: aboutController.index)
+    
+    // App Page
+    app.get("app", ":id", use: appController.index)
 }
 

@@ -10,8 +10,11 @@
     --color-primary-muted: hsl(49, 38%, 80%); /* Cream Muted */
     --color-primary-with-opacity: hsla(49, 38%, 94% , 0.9); /* Cream with Opacity */
     --color-secondary: hsl(204, 41%, 47%); /* Light Blue */
+    --color-secondary-with-opacity: hsla(204, 41%, 47%, 0.8);
     --color-tertiary: hsl(242, 92%, 6%); /* Dark Navy Blue */
+    --color-tertiary-with-opacity: hsla(242, 92%, 6%, 0.2);
     --color-quaternary: hsl(210, 39%, 61%); /* Pale Lighter Blue */
+    
     
     /* Spacing */
     --spacing-xs: 0.25rem; /* 4px */

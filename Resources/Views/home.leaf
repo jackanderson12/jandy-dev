@@ -36,9 +36,6 @@
             <li><a href="/blog_posts">Blog</a></li>
         </ul>
         <!-- End Hidden Mobile Menu -->
-        <button class="primary-button navbar-button">
-            <a href="#SignIn">Sign In</a>
-        </button>
     </nav>
     <!-- End of Navbar -->
     <!-- Hero -->

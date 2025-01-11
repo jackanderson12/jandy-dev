@@ -28,10 +28,6 @@
         display: none; /* Hidden for Mobile */
     }
     
-    .navbar-button {
-        display: none; /* Hidden for Mobile */
-    }
-    
     .hamburger-button {
         display: flex;
         flex-direction: column;
@@ -119,18 +115,6 @@
     
     .menu a:hover {
         text-decoration: underline;
-    }
-    
-    .navbar-button {
-        color: var(--color-tertiary);
-        background: var(--color-primary);
-        border: var(--border-line-size) solid var(--color-quaternary);
-        width: 5rem;
-        height: 2rem;
-    }
-    
-    .navbar-button:hover {
-        background: var(--color-quaternary);
     }
     
     .hamburger-button {

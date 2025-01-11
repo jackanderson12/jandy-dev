@@ -82,6 +82,27 @@
     .mobile-menu.active {
         display: flex;
     }
+    
+    .about {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .two-column {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items */
+        text-align: center; /* Ensure text is aligned properly */
+    }
+
+    .two-column .col-left, .two-column .col-right {
+        width: 100%; /* Full width */
+        padding: var(--spacing-sm); /* Add some spacing */
+    }
 }
 
 /* Desktop Layout */
@@ -140,32 +161,7 @@
     .mobile-menu {
         display: none;
     }
-}
-
-@media only screen and (max-width: 600px) {
-    .about {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-primary);
-        padding: var(--spacing-md) 0;
-    }
     
-    .two-column {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items */
-        text-align: center; /* Ensure text is aligned properly */
-    }
-
-    .two-column .col-left, .two-column .col-right {
-        width: 100%; /* Full width */
-        padding: var(--spacing-sm); /* Add some spacing */
-    }
-}
-/* Desktop Styling */
-@media only screen and (min-width: 600px) {
     .about {
         width: 100%;
         display: flex;
@@ -176,3 +172,5 @@
         padding: var(--spacing-xl) 0;
     }
 }
+
+

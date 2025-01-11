@@ -5,6 +5,10 @@ import FluentSQLiteDriver
 
 // Configures your application
 public func configure(_ app: Application) async throws {
+    // Load environment variables
+    app.environment = try .detect()
+    DotEnv.load(for: app)
+    
     // Increase the maximum request body size (e.g., 50MB)
     app.routes.defaultMaxBodySize = "50mb"
     

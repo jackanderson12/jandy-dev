@@ -11,8 +11,8 @@ func routes(_ app: Application) throws {
     
     // Blog posts
     app.get("blog_posts", use: blogPostController.index) // Render blog posts view
-    app.post("blog_posts", use: blogPostController.create) // Handle POST request
-    app.delete("blog_posts", ":id", use: blogPostController.delete) // Handle DELETE request
+    app.grouped(APIKeyMiddleware()).post("blog_posts", use: blogPostController.create) //API Key protected
+    app.grouped(APIKeyMiddleware()).delete("blog_posts", ":id", use: blogPostController.delete) //API Key protected
     
     app.get("blog_posts", "tech", use: blogPostController.techIndex) // Render blog posts view
     app.get("blog_posts", "tech", ":subcategory", use: blogPostController.techIndex) // Tech posts by subcategory

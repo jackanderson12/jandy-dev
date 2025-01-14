@@ -12,6 +12,12 @@ class BlogPostController {
 
     // Handle creating a new blog post (POST request)
     func create(req: Request) throws -> EventLoopFuture<BlogPost> {
+        let apiKey = req.headers["X-API-Key"].first
+
+        guard apiKey == Environment.get("API_KEY") else {
+            throw Abort(.unauthorized, reason: "Invalid API Key")
+        }
+        
         struct Input: Content {
             var subject: String
             var body: String

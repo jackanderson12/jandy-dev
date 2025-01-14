@@ -7,7 +7,11 @@ import FluentSQLiteDriver
 public func configure(_ app: Application) async throws {
     // Load environment variables
     app.environment = try .detect()
-    DotEnv.load(for: app)
+    if let apiKey = Environment.get("API_KEY") {
+        print("API Key Loaded: \(apiKey)")
+    } else {
+        print("Warning: API_KEY not found")
+    }
     
     // Increase the maximum request body size (e.g., 50MB)
     app.routes.defaultMaxBodySize = "50mb"

@@ -1,0 +1,64 @@
+@import url('base.css');
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--standard-width);
+    padding: 0 var(--spacing-md);
+    margin: 0 0 var(--spacing-md) 0;
+    box-sizing: border-box;
+}
+
+.navbar img {
+    width: var(--navbar-image-width);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu a {
+    color: var(--color-tertiary);
+    margin: 0 var(--spacing-md);
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar-button {
+    background: var(--color-tertiary);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    width: 5rem;
+    height: 2rem;
+}
+
+.navbar-button:hover {
+    background: var(--color-quaternary);
+}
+
+.blog-item {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-item h4 {
+    color: var(--color-secondary)   ;
+}
+
+.blog-images img {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra spacing under images */
+    margin: 0 auto; /* Centers the image */
+}

@@ -11,6 +11,7 @@ func routes(_ app: Application) throws {
     
     // Blog posts
     app.get("blog_posts", use: blogPostController.index) // Render blog posts view
+    app.get("blog_posts", "view_post", ":id", use: blogPostController.viewPost)
     app.grouped(APIKeyMiddleware()).post("blog_posts", use: blogPostController.create) //API Key protected
     app.grouped(APIKeyMiddleware()).delete("blog_posts", ":id", use: blogPostController.delete) //API Key protected
     

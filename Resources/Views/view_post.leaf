@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Blog Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/Styles/base.css">
+    <link rel="stylesheet" href="/Styles/view_post.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="/"><img src="/Images/logo.png" alt="logo"></a>
+        <ul class="menu">
+            <li><a href="/blog_posts/tech">Tech</a></li>
+            <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
+            <li><a href="/blog_posts">All</a></li>
+        </ul>
+    </nav>
+    
+    <div class="blog-item">
+        <h4>#(post.subject)</h4>
+        <p>#(post.body)</p>
+        <div class="blog-images">
+            #for(image in post.imageData):
+            <img src="/Images/#(image)" alt="Blog Image">
+                #endfor
+        </div>
+        <p><strong>Tags:</strong> #(post.tags)</p>
+    </div>
+</body

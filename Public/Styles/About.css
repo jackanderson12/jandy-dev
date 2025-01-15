@@ -63,13 +63,13 @@
         margin: 0;  /* Remove unnecessary margin */
         background-color: var(--color-primary-with-opacity);
     }
-
+    
     /* Mobile Menu Items */
     .mobile-menu li {
         list-style: none;
         padding: var(--spacing-sm);
     }
-
+    
     .mobile-menu a {
         text-decoration: none;
         color: var(--color-secondary);
@@ -77,7 +77,7 @@
         display: block;
         padding: var(--spacing-sm);
     }
-
+    
     /* Show Mobile Menu when Active */
     .mobile-menu.active {
         display: flex;
@@ -87,7 +87,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         background-color: var(--color-primary);
         padding: var(--spacing-md) 0;
@@ -98,7 +98,7 @@
         align-items: center; /* Center items */
         text-align: center; /* Ensure text is aligned properly */
     }
-
+    
     .two-column .col-left, .two-column .col-right {
         width: 100%; /* Full width */
         padding: var(--spacing-sm); /* Add some spacing */
@@ -170,6 +170,76 @@
         align-items: center;
         background-color: var(--color-primary);
         padding: var(--spacing-xl) 0;
+    }
+    
+    /* Contact Form Section */
+    .contact-section {
+        width: 100%;
+        max-width: 40rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 3rem 1rem;
+    }
+    
+    .contact-intro > * + * {
+        margin-top: 1rem;
+    }
+    
+    .contact-title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+    }
+    
+    .form-group-container {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .form-label {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: var(--spacing-sm);
+        border: 1px solid #e5e7eb;
+        display: flex;
+        height: 2rem;
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+    
+    .form-input::placeholder,
+    .form-textarea:focus-visible {
+        color: #6b7280;
+    }
+    
+    .form-input:focus-visible,
+    .form-textarea:focus-visible {
+        outline: var(--outline) solid var(--color-tertiary);
+        outline-offset: var(--outline-offset);
+    }
+    
+    .form-textarea {
+        min-height: 8rem;
+    }
+    
+    .form-submit {
+        display: flex;
+        justify-content: center;
+        width: 20rem;
+        margin-top: var(--spacing-sm);
+        background-color: var(--color-secondary);
+        color: var(--color-primary);
+        padding: var(--spacing-md) var(--spacing-sm);
     }
 }
 

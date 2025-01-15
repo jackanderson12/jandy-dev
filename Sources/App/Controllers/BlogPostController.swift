@@ -9,6 +9,13 @@ class BlogPostController {
             return req.view.render("blog_posts", context)
         }
     }
+    
+    func viewPost(req: Request) throws -> EventLoopFuture<View> {
+        return BlogPost.find(req.parameters.get("id"), on: req.db).flatMap { post in
+            let context = ["post": post]
+            return req.view.render("view_post", context)
+        }
+    }
 
     // Handle creating a new blog post (POST request)
     func create(req: Request) throws -> EventLoopFuture<BlogPost> {

@@ -10,6 +10,8 @@ import Foundation
 
 class AboutController {
     func index(req: Request) throws -> EventLoopFuture<View> {
-        return req.view.render("about")
+        let webFormAPIKey = Environment.get("WEB_FORM_API_KEY") ?? ""
+        let context = ["webFormAPIKey": webFormAPIKey]
+        return req.view.render("about", context)
     }
 }

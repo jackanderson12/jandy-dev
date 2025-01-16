@@ -70,9 +70,6 @@
         <div class="section-container">
             <div class="two-column">
                 <div class="col-left">
-
-                </div>
-                <div class="col-right">
                     <h2>ChefM8</h2>
                     <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
                     <p>
@@ -80,6 +77,9 @@
                         with their friend.
                         It is built using SwiftUI and the Spoonacular API.
                     </p>
+                </div>
+                <div class="col-right">
+                    
                 </div>
             </div>
         </div>

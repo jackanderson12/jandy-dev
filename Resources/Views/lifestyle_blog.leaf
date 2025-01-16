@@ -55,6 +55,23 @@
         </ul>
     </div>
     
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="/blog_posts/lifestyle" method="GET">
+            <input
+                type="text"
+                name="query"
+                placeholder="Search blog posts..."
+                class="search-bar"
+                required
+            />
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        <form action="/blog_posts/lifestyle" method="GET">
+            <button type="submit" class="clear-button">Clear Filter</button>
+        </form>
+    </div>
+    
     <!-- Blog Posts Section -->
     <div class="section-container">
         <div class="blog-container">

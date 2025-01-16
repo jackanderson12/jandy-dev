@@ -90,21 +90,48 @@ class BlogPostController {
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
     }
+    
+    //Search functionality to filter blog posts
+    func search(req: Request) throws -> EventLoopFuture<View> {
+        guard let query = req.query[String.self, at: "query"] else {
+            throw Abort(.badRequest, reason: "Missing search query")
+        }
+
+        return BlogPost.query(on: req.db)
+            .group(.or) { group in
+                group.filter(\.$subject ~~ query)
+                group.filter(\.$tags ~~ query)
+            }
+            .all()
+            .flatMap { posts in
+                let context = ["posts": posts]
+                return req.view.render("blog_posts", context)
+            }
+    }
 
     // Fetch blog posts for the "tech" category
     func techIndex(req: Request) throws -> EventLoopFuture<View> {
         let subcategory = req.parameters.get("subcategory") ?? "all"
+        let query = req.query[String.self, at: "query"] ?? "" // Get the search query from the query string
 
         return BlogPost.query(on: req.db)
-            .group(.and) { query in
-                query.filter(\.$tags ~~ "tech") // Primary tech category
+            .group(.and) { mainQuery in
+                mainQuery.filter(\.$tags ~~ "tech") // Primary tech category
                 if subcategory != "all" {
-                    query.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                    mainQuery.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                }
+                if !query.isEmpty {
+                    // Apply search query filtering
+                    mainQuery.group(.or) { searchGroup in
+                        searchGroup.filter(\.$subject ~~ query)
+                        searchGroup.filter(\.$body ~~ query)
+                        searchGroup.filter(\.$tags ~~ query)
+                    }
                 }
             }
             .all()
             .flatMap { posts in
-                let context = BlogContext(posts: posts, subcategory: subcategory)
+                let context = BlogContext(posts: posts, subcategory: subcategory, searchQuery: query)
                 return req.view.render("tech_blog", context)
             }
     }
@@ -112,17 +139,26 @@ class BlogPostController {
     // Fetch blog posts for the "lifestyle" category
     func lifestyleIndex(req: Request) throws -> EventLoopFuture<View> {
         let subcategory = req.parameters.get("subcategory") ?? "all"
+        let query = req.query[String.self, at: "query"] ?? "" // Get the search query from the query string
         
         return BlogPost.query(on: req.db)
-            .group(.and) { query in
-                query.filter(\.$tags ~~ "lifestyle") // Primary tech category
+            .group(.and) { mainQuery in
+                mainQuery.filter(\.$tags ~~ "lifestyle") // Primary tech category
                 if subcategory != "all" {
-                    query.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                    mainQuery.filter(\.$tags ~~ subcategory) // Additional filtering by subcategory
+                }
+                if !query.isEmpty {
+                    // Apply search query filtering
+                    mainQuery.group(.or) { searchGroup in
+                        searchGroup.filter(\.$subject ~~ query)
+                        searchGroup.filter(\.$body ~~ query)
+                        searchGroup.filter(\.$tags ~~ query)
+                    }
                 }
             }
             .all()
             .flatMap { posts in
-                let context = BlogContext(posts: posts, subcategory: subcategory)
+                let context = BlogContext(posts: posts, subcategory: subcategory, searchQuery: query)
                 return req.view.render("lifestyle_blog", context)
             }
     }

@@ -10,5 +10,8 @@ import Vapor
 struct BlogContext: Encodable {
     let posts: [BlogPost]
     let subcategory: String
+    let searchQuery: String?
 }
+
+
 

@@ -32,6 +32,23 @@
             can be searched with the content lists, search bar, or tags.
             </p>
         </div>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form action="/blog_posts/search" method="GET">
+                <input
+                    type="text"
+                    name="query"
+                    placeholder="Search blog posts..."
+                    class="search-bar"
+                    required
+                />
+                <button type="submit" class="search-button">Search</button>
+            </form>
+            <form action="/blog_posts" method="GET">
+                <button type="submit" class="clear-button">Clear Filter</button>
+            </form>
+        </div>
         <div class="blog-container">
             <h6>Recent Blog Posts:</h6>
             <div class="blog-list">

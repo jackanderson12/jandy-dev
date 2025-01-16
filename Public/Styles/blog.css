@@ -45,6 +45,44 @@
 
 .section-container {
     margin: 0;
+    max-width: 95%;
+    padding: var(--spacing-sm);
+}
+
+/* Search Container */
+.search-container {
+    margin: 20px 0;
+    text-align: center; /* Center-align the container */
+    display: flex; /* Use Flexbox for horizontal alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Add spacing between elements */
+}
+
+/* Ensure buttons and input have consistent alignment */
+.search-bar {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1; /* Optional: Makes the search bar expand more */
+}
+
+.search-button,
+.clear-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4682A9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover,
+.clear-button:hover {
+    background-color: #356f8b;
 }
 
 /* Blog Container */

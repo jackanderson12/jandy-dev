@@ -65,7 +65,7 @@
             <!-- Contact Form -->
             <section class="contact-section">
                 <div class="contact-intro">
-                    <h2 class="contact-title">Contact Me</h2>
+                    <h6>Contact Me</h6>
                 </div>
                 <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="#(webFormAPIKey)" />

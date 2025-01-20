@@ -6,6 +6,7 @@
 //
 import Fluent
 import Vapor
+import Ink
 
 final class BlogPost: Model, Content {
     static let schema = "blog_posts" // Table name in the database
@@ -24,6 +25,15 @@ final class BlogPost: Model, Content {
     
     @Field(key: "imageData")
     var imageData: [String]?
+    
+    // Computed property to render Markdown as HTML
+    var htmlBody: String {
+        let markdownParser = MarkdownParser()
+        let result = markdownParser.parse(body)
+        let html = result.html
+        print("Markdown Output: \(html)")
+        return html
+    }
 
     init() { }
 

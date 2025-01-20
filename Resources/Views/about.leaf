@@ -87,6 +87,9 @@
                         <!-- Honeypot Spam Protection -->
                         <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                             
+                        <!-- Redirect Success -->
+                        <input type="hidden" name="redirect" value="http://localhost:8080/about/contact_success">
+                            
                         <button class="form-submit" type="submit">Send Message</button>
                     </div>
                 </form>

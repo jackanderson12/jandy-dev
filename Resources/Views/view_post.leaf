@@ -10,6 +10,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="/Styles/base.css">
     <link rel="stylesheet" href="/Styles/view_post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
 </head>
 
 <body>
@@ -24,13 +25,14 @@
     </nav>
     
     <div class="blog-item">
-        <h4>#(post.subject)</h4>
-        <p>#(post.body)</p>
-        <div class="blog-images">
-            #for(image in post.imageData):
-            <img src="/Images/#(image)" alt="Blog Image">
-                #endfor
-        </div>
+        #unsafeHTML(htmlBody)
         <p><strong>Tags:</strong> #(post.tags)</p>
     </div>
-</body
+</body>
+<!-- Syntax Highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        hljs.highlightAll();
+    });
+</script>

@@ -46,6 +46,7 @@
 }
 
 .blog-item {
+    width: 100%;
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-sm);
     background-color: var(--color-primary);
@@ -53,12 +54,12 @@
 }
 
 .blog-item h4 {
-    color: var(--color-secondary)   ;
+    color: var(--color-secondary);
 }
 
-.blog-images img {
-    max-width: 100%; /* Ensures image does not exceed container width */
-    height: auto; /* Maintains aspect ratio */
-    display: block; /* Removes extra spacing under images */
-    margin: 0 auto; /* Centers the image */
+.blog-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }

@@ -45,8 +45,15 @@
     background: var(--color-quaternary);
 }
 
+.section-conatiner {
+    display: flex;
+    justify-content: center;
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-sm);
+}
+
 .blog-item {
-    width: 100%;
+    width: 95%;
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-sm);
     background-color: var(--color-primary);

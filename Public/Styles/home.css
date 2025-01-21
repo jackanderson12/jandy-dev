@@ -78,6 +78,175 @@
     .mobile-menu.active {
         display: flex;
     }
+    
+    /* HERO */
+    .hero {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        padding: var(--spacing-md) 0;
+    }
+    
+    .two-column {
+        flex-direction: column; /* Stack elements vertically */
+        grid-template-columns: 1fr;
+        align-items: center; /* Center items */
+        text-align: center; /* Ensure text is aligned properly */
+    }
+
+    .two-column .col-left, .two-column .col-right {
+        width: 100%; /* Full width */
+        padding: var(--spacing-sm); /* Add some spacing */
+    }
+    
+    /* CHEFM8 SECTION */
+    .chefm8-section {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-quaternary);
+        margin: auto;
+    }
+
+    .chefm8-section .two-column .col-left {
+        height: 28rem;
+    }
+
+    .chefm8-section h2 {
+        color: var(--color-primary);
+        text-align: center;
+    }
+
+    .chefm8-section a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    /* GAMBLIT SECTION */
+    .gamblit-section {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        margin: auto;
+    }
+    
+    .gamblit-section .two-column .col-right {
+        height: 28rem;
+    }
+
+    .gamblit-section h2 {
+        color: var(--color-quaternary);
+        text-align: center;
+    }
+
+    .gamblit-section a {
+        color: var(--color-quaternary);
+        text-decoration: underline;
+    }
+    /* ROEBLING SECTION */
+    .roebling-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-quaternary);
+        text-align: center;
+    }
+
+    .roebling-section h2 {
+        color: var(--color-primary);
+    }
+
+    .roebling-section a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    .roebling-section img {
+        width: 100%;
+        height: auto;
+        margin: auto auto;
+    }
+    
+    /* Stacked Cards */
+    .stack, .stack-secondary {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+
+    .card {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: var(--mobile-phone-card-width);
+      height: var(--mobile-phone-card-height);
+      border-radius: var(--border-radius-sm);
+      transition: transform 0.6s;
+      user-select: none;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .card:nth-last-child(n + 5) {
+      --x: calc(-50% + 90px);
+      transform: translate(var(--x), -50%) scale(0.85);
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
+    }
+
+    .card:nth-last-child(4) {
+      --x: calc(-50% + 60px);
+      transform: translate(var(--x), -50%) scale(0.9);
+    }
+
+    .card:nth-last-child(3) {
+      --x: calc(-50% + 30px);
+      transform: translate(var(--x), -50%) scale(0.95);
+    }
+
+    .card:nth-last-child(2) {
+      --x: calc(-50%);
+      transform: translate(var(--x), -50%) scale(1);
+    }
+
+    .card:nth-last-child(1) {
+      --x: calc(-50% - 30px);
+      transform: translate(var(--x), -50%) scale(1.05);
+    }
+
+    .card:nth-last-child(1) img {
+      box-shadow: 0 1px 5px 5px var(--color-gold-with-opacity);
+    }
+
+    .swap {
+      animation: swap 1.3s ease-out forwards;
+    }
+
+    @keyframes swap {
+      30% {
+        transform: translate(calc(var(--x) - 250px), -50%) scale(0.85) rotate(-5deg)
+          rotateY(65deg);
+      }
+      100% {
+        transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+        z-index: -1;
+      }
+    }
 }
 
 /* Desktop Layout */
@@ -124,35 +293,8 @@
     .mobile-menu {
         display: none;
     }
-}
-
-
-/* HERO */
-/* Mobile Styling */
-@media only screen and (max-width: 600px) {
-    .hero {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-primary);
-        padding: var(--spacing-md) 0;
-    }
     
-    .two-column {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center; /* Center items */
-        text-align: center; /* Ensure text is aligned properly */
-    }
-
-    .two-column .col-left, .two-column .col-right {
-        width: 100%; /* Full width */
-        padding: var(--spacing-sm); /* Add some spacing */
-    }
-}
-/* Desktop Styling */
-@media only screen and (min-width: 600px) {
+    /* HERO */
     .hero {
         width: 100%;
         display: flex;
@@ -162,61 +304,153 @@
         background-color: var(--color-primary);
         padding: var(--spacing-xl) 0;
     }
+    
+    /* CHEFM8 SECTION */
+    .chefm8-section {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-quaternary);
+        margin: auto;
+    }
+
+    .chefm8-section .two-column {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch; /* Ensures both columns stretch to the same height */
+        flex-wrap: wrap; /* Allows columns to wrap if necessary */
+        width: 100%;
+    }
+
+    .chefm8-section h2 {
+        color: var(--color-primary);
+        text-align: center;
+    }
+
+    .chefm8-section a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    /* GAMBLIT SECTION */
+    .gamblit-section {
+        width: 100%;
+        height: 50rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-primary);
+        margin: auto;
+    }
+
+    .gamblit-section h2 {
+        color: var(--color-quaternary);
+        text-align: center;
+    }
+
+    .gamblit-section a {
+        color: var(--color-quaternary);
+        text-decoration: underline;
+    }
+    /* ROEBLING SECTION */
+    .roebling-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-quaternary);
+        text-align: center;
+    }
+
+    .roebling-section h2 {
+        color: var(--color-primary);
+    }
+
+    .roebling-section a {
+        color: var(--color-primary);
+        text-decoration: underline;
+    }
+
+    .roebling-section img {
+        width: 100%;
+        height: auto;
+        margin: auto auto;
+    }
+    
+    /* Stacked Cards */
+
+    .stack, .stack-secondary {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+
+    .card {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: var(--phone-card-width);
+      height: var(--phone-card-height);
+      border-radius: var(--border-radius-sm);
+      transition: transform 0.6s;
+      user-select: none;
+    }
+
+    .card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .card:nth-last-child(n + 5) {
+      --x: calc(-50% + 90px);
+      transform: translate(var(--x), -50%) scale(0.85);
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.01);
+    }
+
+    .card:nth-last-child(4) {
+      --x: calc(-50% + 60px);
+      transform: translate(var(--x), -50%) scale(0.9);
+    }
+
+    .card:nth-last-child(3) {
+      --x: calc(-50% + 30px);
+      transform: translate(var(--x), -50%) scale(0.95);
+    }
+
+    .card:nth-last-child(2) {
+      --x: calc(-50%);
+      transform: translate(var(--x), -50%) scale(1);
+    }
+
+    .card:nth-last-child(1) {
+      --x: calc(-50% - 30px);
+      transform: translate(var(--x), -50%) scale(1.05);
+    }
+
+    .card:nth-last-child(1) img {
+      box-shadow: 0 1px 5px 5px var(--color-gold-with-opacity);
+    }
+
+    .swap {
+      animation: swap 1.3s ease-out forwards;
+    }
+
+    @keyframes swap {
+      30% {
+        transform: translate(calc(var(--x) - 250px), -50%) scale(0.85) rotate(-5deg)
+          rotateY(65deg);
+      }
+      100% {
+        transform: translate(calc(var(--x) - 30px), -50%) scale(0.5);
+        z-index: -1;
+      }
+    }
 }
 
 
-/* CHEFM8 SECTION */
-.chefm8-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-quaternary);
-}
-
-.chefm8-section h2 {
-    color: var(--color-primary);
-    text-align: center;
-}
-
-.chefm8-section a {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
-/* GAMBLIT SECTION */
-.gamblit-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-primary);
-}
-
-.gamblit-section h2 {
-    color: var(--color-quaternary);
-    text-align: center;
-}
-
-.gamblit-section a {
-    color: var(--color-quaternary);
-    text-decoration: underline;
-}
-/* ROEBLING SECTION */
-.roebling-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-quaternary);
-    text-align: center;
-}
-
-.roebling-section h2 {
-    color: var(--color-primary);
-}
-
-.roebling-section a {
-    color: var(--color-primary);
-    text-decoration: underline;
-}

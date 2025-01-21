@@ -63,7 +63,29 @@
         <div class="section-container">
             <div class="two-column">
                 <div class="col-left">
-
+                    <div class="stack">
+                        <div class="card">
+                            <img src="/Images/chefm8_images/cookbook_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/add_recipe_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/shopping_cart_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/authentication_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/map_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/recipe_info_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/chefm8_images/text_scanner.png">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-right">
                     <h2>ChefM8</h2>
@@ -71,7 +93,7 @@
                     <p>
                         ChefM8 is a recipe app that allows users to search for recipes, save recipes, and share recipes
                         with their friend.
-                        It is built using SwiftUI and the Spoonacular API.
+                        It is built using SwiftUI, Core Data, and the Spoonacular API.
                     </p>
                     <a href="/app/chefm8">more info...</a>
                 </div>
@@ -87,13 +109,29 @@
                     <h2>Gamblit</h2>
                     <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
                     <p>
-                        Gamblit is a scoial media and sports gambling visualization app. It creates a fun
-                        environment for users to share their gambles with their friends.
+                        Gamblit is a social media and sports gambling visualization app. It creates a fun
+                        environment for users to share their gambles with their friends. Gamblit is built with SwiftUI, Google Firebase, and the-odds-api.
                     </p>
                     <a href="/app/gamblit">more info...</a>
                 </div>
                 <div class="col-right">
-
+                    <div class="stack-secondary">
+                        <div class="card">
+                            <img src="/Images/gamblit_images/authentication_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/gamblit_images/create_gamble_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/gamblit_images/event_view_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/gamblit_images/games_view_page.png">
+                        </div>
+                        <div class="card">
+                            <img src="/Images/gamblit_images/feed_page.png">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,6 +146,8 @@
                 Roebling is a web application to help small businesses secure loans for crucial equipment.
             </p>
             <a href="/app/roebling">more info...</a>
+            <img src="/Images/roebling_images/hero_desktop.png">
         </div>
     </section>
+    <script src="/Javascript/stack.js"></script>
 </body>

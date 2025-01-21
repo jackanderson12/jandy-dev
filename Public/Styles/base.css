@@ -18,6 +18,7 @@
     --color-white: hsl(0, 0%, 100%);
     --color-black: hsl(0, 0%, 0%);
     --color-light-gray: hsla(0, 0%, 80%, 1);
+    --color-gold-with-opacity: hsla(40, 80%, 50%, 0.8);
     
     /* Spacing */
     --spacing-xs: 0.25rem; /* 4px */
@@ -71,6 +72,12 @@
     
     /* Modal Styling */
     --modal-width: 16rem;
+    
+    /* Iphone Card Styling */
+    --phone-card-width: 22rem;
+    --phone-card-height: 45rem;
+    --mobile-phone-card-width: 15rem;
+    --mobile-phone-card-height: 26rem;
 }
 
 /* GENERAL ELEMENT STYLES */

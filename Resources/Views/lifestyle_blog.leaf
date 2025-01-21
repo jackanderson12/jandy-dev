@@ -78,7 +78,6 @@
             <div class="blog-list">
                 #for(post in posts):
                 <div class="blog-item">
-                    <h4>#(post.subject)</h4>
                     <p>#preview(post.body)</p>
                     <div class="blog-images">
                         #for(image in post.imageData):

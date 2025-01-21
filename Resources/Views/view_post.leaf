@@ -23,10 +23,11 @@
             <li><a href="/blog_posts">All</a></li>
         </ul>
     </nav>
-    
-    <div class="blog-item">
-        #unsafeHTML(htmlBody)
-        <p><strong>Tags:</strong> #(post.tags)</p>
+    <div class="section-container">
+        <div class="blog-item">
+            #unsafeHTML(htmlBody)
+            <p><strong>Tags:</strong> #(post.tags)</p>
+        </div>
     </div>
 </body>
 <!-- Syntax Highlighting -->

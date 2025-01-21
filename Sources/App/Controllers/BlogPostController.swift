@@ -35,7 +35,6 @@ class BlogPostController {
         }
         
         struct Input: Content {
-            var subject: String
             var body: String // This contains markdown text
             var tags: String
             var files: [File]   // Accepts multiple images
@@ -48,7 +47,6 @@ class BlogPostController {
             let updatedHTML = self.replaceImageReferences(in: input.body, with: storedFilenames)
 
             let blogPost = BlogPost(
-                subject: input.subject,
                 body: updatedHTML, // Now storing converted HTML instead of Markdown
                 tags: input.tags,
                 imageData: storedFilenames
@@ -132,8 +130,8 @@ class BlogPostController {
         
         return BlogPost.query(on: req.db)
             .group(.or) { group in
-                group.filter(\.$subject ~~ query)
                 group.filter(\.$tags ~~ query)
+                group.filter(\.$body ~~ query)
             }
             .all()
             .flatMap { posts in
@@ -156,7 +154,6 @@ class BlogPostController {
                 if !query.isEmpty {
                     // Apply search query filtering
                     mainQuery.group(.or) { searchGroup in
-                        searchGroup.filter(\.$subject ~~ query)
                         searchGroup.filter(\.$body ~~ query)
                         searchGroup.filter(\.$tags ~~ query)
                     }
@@ -183,7 +180,6 @@ class BlogPostController {
                 if !query.isEmpty {
                     // Apply search query filtering
                     mainQuery.group(.or) { searchGroup in
-                        searchGroup.filter(\.$subject ~~ query)
                         searchGroup.filter(\.$body ~~ query)
                         searchGroup.filter(\.$tags ~~ query)
                     }

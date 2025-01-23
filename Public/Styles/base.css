@@ -76,7 +76,7 @@
     /* Iphone Card Styling */
     --phone-card-width: 22rem;
     --phone-card-height: 45rem;
-    --mobile-phone-card-width: 15rem;
+    --mobile-phone-card-width: 13rem;
     --mobile-phone-card-height: 26rem;
 }
 
@@ -211,15 +211,3 @@ p {
     justify-content: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 0;
-}
-
-.card .icon {
-    height: 50px;
-    margin: 0 0 var(--spacing-sm) 0;
-}

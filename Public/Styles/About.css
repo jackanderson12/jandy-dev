@@ -2,7 +2,7 @@
 
 /* navbar */
 /* Mobile Layout */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     .navbar {
         position: fixed;
         top: 0;
@@ -220,7 +220,7 @@
 }
 
 /* Desktop Layout */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 650px) {
     .navbar {
         position: relative;
         z-index: 1000;

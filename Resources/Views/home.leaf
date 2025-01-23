@@ -48,7 +48,7 @@
                     </h1>
                     <p>
                         I'm an iOS developer, specializing in Swift and SwiftUI.
-                        I also have experience with Swift full stack development, using Vapor, Leaf, HTML, and CSS.
+                        I also have experience with Swift full stack development, using Vapor, Fluent, Leaf, HTML, CSS, and Javascript.
                     </p>
                 </div>
                 <div class="col-right">
@@ -107,7 +107,7 @@
             <div class="two-column">
                 <div class="col-left">
                     <h2>Gamblit</h2>
-                    <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
+                    <a href="/blog_posts/tech/projects">App in Development</a>
                     <p>
                         Gamblit is a social media and sports gambling visualization app. It creates a fun
                         environment for users to share their gambles with their friends. Gamblit is built with SwiftUI, Google Firebase, and the-odds-api.
@@ -141,7 +141,7 @@
     <section class="roebling-section">
         <div class="section-container">
             <h2>Roebling</h2>
-            <a href="https://roebling.us">Roebling Link</a>
+            <a href="https://roebling.us">Visit Site</a>
             <p>
                 Roebling is a web application to help small businesses secure loans for crucial equipment.
             </p>

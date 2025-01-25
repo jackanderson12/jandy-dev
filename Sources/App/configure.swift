@@ -5,6 +5,21 @@ import FluentSQLiteDriver
 
 // Configures your application
 public func configure(_ app: Application) async throws {
+    // Load environment variables
+    app.environment = try .detect()
+    
+    if let apiKey = Environment.get("API_KEY") {
+        print("API Key Loaded")
+    } else {
+        print("Warning: API_KEY not found")
+    }
+    
+    if let webFormAPIKey = Environment.get("WEB_FORM_API_KEY") {
+        print("Web form key loaded")
+    } else {
+        print("Failed to load the web form api key")
+    }
+    
     // Increase the maximum request body size (e.g., 50MB)
     app.routes.defaultMaxBodySize = "50mb"
     
@@ -13,6 +28,8 @@ public func configure(_ app: Application) async throws {
 
     // Use Leaf for views
     app.views.use(.leaf)
+    app.leaf.tags["preview"] = PreviewTag()
+    app.leaf.tags["feature"] = SwiperFeatureTag()
     
     let databaseDir = app.directory.workingDirectory + "Database/"
     let databasePath = databaseDir + "db.sqlite"
@@ -25,6 +42,8 @@ public func configure(_ app: Application) async throws {
     
     // Configure SQLite database with a file
     app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    
+
     
     // Run migrations
     app.migrations.add(CreateBlogPost())

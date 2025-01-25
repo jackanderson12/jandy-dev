@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech Blog Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -17,23 +18,85 @@
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
+            <li><a href="/blog_posts">All</a></li>
         </ul>
     </nav>
+    
+    <div class="catergory-container">
+        <ul class="menu">
+            <li>
+                #if(subcategory == "all"):
+                <a href="/blog_posts/tech" class="active">All</a>
+                #else:
+                <a href="/blog_posts/tech">All</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "data_structures_algorithms"):
+                <a href="/blog_posts/tech/data_structures_algorithms" class="active">Data Structures and Algorithms</a>
+                #else:
+                <a href="/blog_posts/tech/data_structures_algorithms">Data Structures and Algorithms</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "dev_ops"):
+                <a href="/blog_posts/tech/dev_ops" class="active">Dev Ops</a>
+                #else:
+                <a href="/blog_posts/tech/dev_ops">Dev Ops</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "math"):
+                <a href="/blog_posts/tech/math" class="active">Math</a>
+                #else:
+                <a href="/blog_posts/tech/math">Math</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "projects"):
+                <a href="/blog_posts/tech/projects" class="active">Projects</a>
+                #else:
+                <a href="/blog_posts/tech/projects">Projects</a>
+                #endif
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="/blog_posts/tech" method="GET">
+            <input
+                type="text"
+                name="query"
+                placeholder="Search blog posts..."
+                class="search-bar"
+                required
+            />
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        <form action="/blog_posts/tech" method="GET">
+            <button type="submit" class="clear-button">Clear Filter</button>
+        </form>
+    </div>
 
     <!-- Blog Posts Section -->
     <div class="section-container">
         <div class="blog-container">
-            <h3>Recent Blog Posts:</h3>
-            <ul class="blog-list">
+            <div class="blog-list">
                 #for(post in posts):
-                <li class="blog-item">
-                    <h4>#(post.subject)</h4>
-                    <p>#(post.body)</p>
+                <div class="blog-item">
+                    <p>#preview(post.body)</p>
+                    <div class="blog-images">
+                        #for(image in post.imageData):
+                        <img src="/Images/#(image)" alt="Blog Image">
+                        #endfor
+                    </div>
+                    <a href="/blog_posts/view_post/#(post.id)">Read More...</a>
                     <p><strong>Tags:</strong> #(post.tags)</p>
-                </li>
+                </div>
                 <hr>
                 #endfor
-            </ul>
+            </div>
         </div>
     </div>
 </body>

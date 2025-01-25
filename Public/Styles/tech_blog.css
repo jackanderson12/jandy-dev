@@ -1,5 +1,10 @@
 @import url('base.css');
 
+body {
+    color: var(--color-primary);
+    background-color: var(--color-tertiary);
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -8,12 +13,12 @@
     width: 100%;
     max-width: var(--standard-width);
     padding: 0 var(--spacing-md);
-    margin: 0 0 var(--spacing-xl) 0;
+    margin: 0 0 var(--spacing-md) 0;
     box-sizing: border-box;
 }
 
 .navbar img {
-    width: 100px;
+    width: var(--navbar-image-width);
 }
 
 .menu {
@@ -36,37 +41,113 @@
 .navbar-button {
     background: var(--color-tertiary);
     border: none;
-    border-radius: 10px;
-    width: 80px;
-    height: 25px;
+    border-radius: var(--border-radius-sm);
+    width: 5rem;
+    height: 2rem;
 }
 
 .navbar-button:hover {
     background: var(--color-quaternary);
 }
 
+/* Catergory Container */
+.catergory-container {
+    text-align: center;
+    margin: var(--spacing-xs) 0;
+    max-width: 100%;
+}
+
+.catergory-container .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: var(--spacing-xs);
+}
+
+.catergory-container .menu li {
+    margin: 0 auto;
+}
+
+.catergory-container .menu a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-primary-muted);
+    padding: 0;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for the active/selected category */
+.catergory-container .menu a.active,
+.catergory-container .menu a:focus,
+.catergory-container .menu a:hover {
+    color: hsla(0, 0%, 100%, 1);
+    text-decoration: underline;
+}
+
+/* Search Container */
+.search-container {
+    margin: var(--spacing-medge) 0;
+    text-align: center; /* Center-align the container */
+    display: flex; /* Use Flexbox for horizontal alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: var(--spacing-shmedium); /* Add spacing between elements */
+}
+
+/* Ensure buttons and input have consistent alignment */
+.search-bar {
+    width: 10rem;
+    padding: var(--spacing-sm);
+    border: var(--border-line-size) solid var(--color-light-gray);
+    border-radius: var(--border-radius-sm);
+}
+
+.search-button,
+.clear-button {
+    padding: var(--spacing-sm) var(--spacing-shmedium);
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+}
+
+.search-button:hover,
+.clear-button:hover {
+    background-color: var(--color-tertiary);
+}
+
 /* Blog Container */
-.blog-container {
-    h3 {
-        font-weight: 600;
-    }
+.blog-container h3 {
+    font-weight: 600;
 }
 
 /* Blog List */
 .blog-list {
     list-style: none;
-    hr {
-        border-top: var(--border-line-size) solid var(--color-secondary);
-    }
+}
+.blog-list hr {
+    border-top: var(--border-line-size) solid var(--color-secondary);
 }
 
 /* Blog Item */
 .blog-item {
     margin-bottom: var(--spacing-md);
     padding: var(--spacing-sm);
-    background-color: var(--color-primary);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    h4 {
-        color: var(--color-secondary);
-    }
+}
+
+.blog-item h4 {
+    color: var(--color-secondary);
+}
+
+.blog-images img {
+    max-width: 100%; /* Ensures image does not exceed container width */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra spacing under images */
+    margin: 0 auto; /* Centers the image */
 }

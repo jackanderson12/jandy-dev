@@ -82,6 +82,7 @@
                 <li>Implemented a <strong>Google Cloud Function</strong> using <strong>Python</strong> and <strong>Flask</strong>, paired with <strong>Firebase</strong> authentication, to securely process API calls and conceal API keys.</li>
                 <li>Used <strong>NSCache</strong> and <strong>FileManager</strong> to efficiently cache recipe-related images, reducing network requests.</li>
             </ul>
+            <h5>Feature Preview</h5>
             <div class="two-column">
                 <div class="col-left">
                     <!-- Slider main container -->
@@ -114,8 +115,8 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <p>
-                        Feature description
+                    <p id="feature-text">
+                        #feature("cookbook_page.png")
                     </p>
                 </div>
             </div>
@@ -133,7 +134,44 @@
              <p>
                  Gamblit is a scoial media and sports gambling visualization app. It creates a fun
                  environment for users to share their gambles with their friends.
-             </p>S
+             </p>
+             <div class="two-column">
+                 <div class="col-left">
+                     <!-- Slider main container -->
+                     <div class="swiper">
+                       <!-- Additional required wrapper -->
+                       <div class="swiper-wrapper">
+                         <!-- Slides -->
+                         <div class="swiper-slide">
+                             <img src="/Images/gamblit_images/games_view_page.png">
+                         </div>
+                         <div class="swiper-slide">
+                             <img src="/Images/gamblit_images/event_view_page.png">
+                         </div>
+                         <div class="swiper-slide">
+                             <img src="/Images/gamblit_images/create_gamble_page.png">
+                         </div>
+                         <div class="swiper-slide">
+                             <img src="/Images/gamblit_images/feed_page.png">
+                         </div>
+                       </div>
+                       <!-- If we need pagination -->
+                       <div class="swiper-pagination"></div>
+
+                       <!-- If we need navigation buttons -->
+                       <div class="swiper-button-prev"></div>
+                       <div class="swiper-button-next"></div>
+
+                       <!-- If we need scrollbar -->
+                       <div class="swiper-scrollbar"></div>
+                     </div>
+                 </div>
+                 <div class="col-right">
+                     <p id="feature-text">
+                         #feature("games_view_page.png")
+                     </p>
+                 </div>
+             </div>
          </div>
      </section>
      #endif
@@ -148,6 +186,37 @@
              <p>
                  Roebling is a web application to help small businesses secure loans for crucial equipment.
              </p>
+             <div class="two-column">
+                 <div class="col-left">
+                     <!-- Slider main container -->
+                     <div class="swiper">
+                       <!-- Additional required wrapper -->
+                       <div class="swiper-wrapper">
+                         <!-- Slides -->
+                         <div class="swiper-slide">
+                             <img src="/Images/gamblit_images/hero_desktop.png">
+                         </div>
+                         <div class="swiper-slide">
+                             <img src="/Images/roebling_images/hero_mobile.png">
+                         </div>
+                       </div>
+                       <!-- If we need pagination -->
+                       <div class="swiper-pagination"></div>
+
+                       <!-- If we need navigation buttons -->
+                       <div class="swiper-button-prev"></div>
+                       <div class="swiper-button-next"></div>
+
+                       <!-- If we need scrollbar -->
+                       <div class="swiper-scrollbar"></div>
+                     </div>
+                 </div>
+                 <div class="col-right">
+                     <p id="feature-text">
+                         #feature("hero_desktop.png")
+                     </p>
+                 </div>
+             </div>
          </div>
      </section>
      #endif

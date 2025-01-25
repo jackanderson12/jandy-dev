@@ -220,6 +220,25 @@
     line-height: var(--p-height);
 }
 
+.section-container {
+    margin-bottom: var(--spacing-medge);
+}
+
+.section-container a {
+    display: flex;
+    justify-content: center;
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+.section-container h5 {
+    display: flex;
+    justify-content: center;
+    color: var(--color-secondary);
+    margin: var(--spacing-lg) auto;
+    border-bottom: var(--border-line-size) solid var(--color-secondary);
+}
+
 /* Image Swiper */
 .swiper {
   width: 26rem;

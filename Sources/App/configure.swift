@@ -29,6 +29,7 @@ public func configure(_ app: Application) async throws {
     // Use Leaf for views
     app.views.use(.leaf)
     app.leaf.tags["preview"] = PreviewTag()
+    app.leaf.tags["feature"] = SwiperFeatureTag()
     
     let databaseDir = app.directory.workingDirectory + "Database/"
     let databasePath = databaseDir + "db.sqlite"

@@ -241,8 +241,9 @@
 
 /* Image Swiper */
 .swiper {
-  width: 26rem;
-  height: 50rem;
+    positon: relative;
+    width: 26rem;
+    height: 50rem;
 }
 
 .swiper img {
@@ -251,4 +252,15 @@
     height: 100%;
     object-fit: fit;
 }
+
+/* Left Navigation Button */
+.swiper-button-prev {
+    left: 0.5rem;
+}
+
+/* Right Navigation Button */
+.swiper-button-next {
+    right: 0.5rem;
+}
+
 

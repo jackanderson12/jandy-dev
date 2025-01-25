@@ -109,9 +109,6 @@
                       <!-- If we need navigation buttons -->
                       <div class="swiper-button-prev"></div>
                       <div class="swiper-button-next"></div>
-
-                      <!-- If we need scrollbar -->
-                      <div class="swiper-scrollbar"></div>
                     </div>
                 </div>
                 <div class="col-right">
@@ -135,6 +132,7 @@
                  Gamblit is a scoial media and sports gambling visualization app. It creates a fun
                  environment for users to share their gambles with their friends.
              </p>
+             <h5>Feature Preview</h5>
              <div class="two-column">
                  <div class="col-left">
                      <!-- Slider main container -->
@@ -161,9 +159,6 @@
                        <!-- If we need navigation buttons -->
                        <div class="swiper-button-prev"></div>
                        <div class="swiper-button-next"></div>
-
-                       <!-- If we need scrollbar -->
-                       <div class="swiper-scrollbar"></div>
                      </div>
                  </div>
                  <div class="col-right">
@@ -186,6 +181,7 @@
              <p>
                  Roebling is a web application to help small businesses secure loans for crucial equipment.
              </p>
+             <h5>Feature Preview</h5>
              <div class="two-column">
                  <div class="col-left">
                      <!-- Slider main container -->
@@ -194,7 +190,7 @@
                        <div class="swiper-wrapper">
                          <!-- Slides -->
                          <div class="swiper-slide">
-                             <img src="/Images/gamblit_images/hero_desktop.png">
+                             <img src="/Images/roebling_images/hero_desktop.png">
                          </div>
                          <div class="swiper-slide">
                              <img src="/Images/roebling_images/hero_mobile.png">
@@ -207,8 +203,6 @@
                        <div class="swiper-button-prev"></div>
                        <div class="swiper-button-next"></div>
 
-                       <!-- If we need scrollbar -->
-                       <div class="swiper-scrollbar"></div>
                      </div>
                  </div>
                  <div class="col-right">

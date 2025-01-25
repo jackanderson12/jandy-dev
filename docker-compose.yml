@@ -24,4 +24,4 @@ services:
       - ./Database:/app/Database  # Persist SQLite DB
     environment:
       - LOG_LEVEL=debug
-    command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
+    command: ["serve", "--env", "production", "--hostname", "127.0.0.1", "--port", "8080"]

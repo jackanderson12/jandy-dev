@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lifestyle Blog Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -17,23 +18,78 @@
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
+            <li><a href="/blog_posts">All</a></li>
         </ul>
     </nav>
-
+    
+    <div class="catergory-container">
+        <ul class="menu">
+            <li>
+                #if(subcategory == "all"):
+                <a href="/blog_posts/lifestyle" class="active">All</a>
+                #else:
+                <a href="/blog_posts/lifestyle">All</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "travel"):
+                <a href="/blog_posts/lifestyle/travel" class="active">Travel</a>
+                #else:
+                <a href="/blog_posts/lifestyle/travel">Travel</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "food_drink"):
+                <a href="/blog_posts/lifestyle/food_drink" class="active">Food and Drink</a>
+                #else:
+                <a href="/blog_posts/lifestyle/food_drink">Food and Drink</a>
+                #endif
+            </li>
+            <li>
+                #if(subcategory == "editorial"):
+                <a href="/blog_posts/lifestyle/editorial" class="active">Editorial</a>
+                #else:
+                <a href="/blog_posts/lifestyle/editorial">Editorial</a>
+                #endif
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form action="/blog_posts/lifestyle" method="GET">
+            <input
+                type="text"
+                name="query"
+                placeholder="Search blog posts..."
+                class="search-bar"
+                required
+            />
+            <button type="submit" class="search-button">Search</button>
+        </form>
+        <form action="/blog_posts/lifestyle" method="GET">
+            <button type="submit" class="clear-button">Clear Filter</button>
+        </form>
+    </div>
+    
     <!-- Blog Posts Section -->
     <div class="section-container">
         <div class="blog-container">
-            <h3>Recent Blog Posts:</h3>
-            <ul class="blog-list">
+            <div class="blog-list">
                 #for(post in posts):
-                <li class="blog-item">
-                    <h4>#(post.subject)</h4>
-                    <p>#(post.body)</p>
+                <div class="blog-item">
+                    <p>#preview(post.body)</p>
+                    <div class="blog-images">
+                        #for(image in post.imageData):
+                        <img src="/Images/#(image)" alt="Blog Image">
+                        #endfor
+                    </div>
+                    <a href="/blog_posts/view_post/#(post.id)">Read More...</a>
                     <p><strong>Tags:</strong> #(post.tags)</p>
-                </li>
+                </div>
                 <hr>
                 #endfor
-            </ul>
+            </div>
         </div>
     </div>
 </body>

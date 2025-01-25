@@ -6,21 +6,35 @@
     --font-primary: 'Manrope', sans-serif;
     
     /* Colors */
-    --color-primary: #F6F4EB;
-    --color-secondary: #4682A9;
-    --color-tertiary: #91C8E4;
-    --color-quaternary: #749BC2;
+    --color-primary: hsl(49, 38%, 94%); /* Cream */
+    --color-primary-muted: hsl(49, 38%, 80%); /* Cream Muted */
+    --color-primary-with-opacity: hsla(49, 38%, 94% , 0.9); /* Cream with Opacity */
+    --color-secondary: hsl(204, 41%, 47%); /* Light Blue */
+    --color-secondary-with-opacity: hsla(204, 41%, 47%, 0.8);
+    --color-tertiary: hsl(242, 92%, 6%); /* Dark Navy Blue */
+    --color-tertiary-with-opacity: hsla(242, 92%, 6%, 0.2);
+    --color-quaternary: hsl(210, 39%, 61%); /* Pale Lighter Blue */
+    
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+    --color-light-gray: hsla(0, 0%, 80%, 1);
+    --color-gold-with-opacity: hsla(40, 80%, 50%, 0.8);
     
     /* Spacing */
+    --spacing-xs: 0.25rem; /* 4px */
     --spacing-sm: 0.5rem; /* 8px */
+    --spacing-shmedium: 0.625rem; /* 10px */
+    --spacing-goat: 0.75rem;  /* 12px */
     --spacing-md: 1rem;   /* 16px */
+    --spacing-medge: 1.25rem; /* 20px */
     --spacing-lg: 2rem;   /* 32px */
     --spacing-xl: 4rem;   /* 64px */
+    --spacing-xxl: 8rem;  /* 128px */
     --standard-width: 75rem; /* 1200px */
     
     /* Text Sizing */
-    --h1-size: 5.875rem; /* 94px */
-    --h1-height: 6.75rem; /* 108px */
+    --h1-size: 5.3125rem; /* 85px */
+    --h1-height: 5.875rem; /* 94px */
     --h2-size: 4rem; /* 64px */
     --h2-height: 5.3125rem; /* 85px */
     --h3-size: 2.5rem; /* 40px */
@@ -36,8 +50,7 @@
     --button-size: 1rem; /* 16px */
     
     /* Border Properties */
-    --border-line-size: 0.1rem;
-    --border-size: 0.25rem;
+    --border-line-size: 0.075rem;
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
     --border-radius-lg: 1rem;
@@ -46,6 +59,25 @@
     --box-shadow-none: 0;
     --box-shadow-light: 0.25rem;
     --box-shadow-md: 0.5rem;
+    
+    /* Hamburger Button */
+    --hamburger-height: 0.25rem;
+    --hamburger-width: 2rem;
+    --hamburger-border-radius: 0.35rem;
+    
+    /* Navbar Styling */
+    --navbar-height: 5rem;
+    --navbar-image-width: 4rem;
+    --navbar-image-height: 4rem;
+    
+    /* Modal Styling */
+    --modal-width: 16rem;
+    
+    /* Iphone Card Styling */
+    --phone-card-width: 22rem;
+    --phone-card-height: 45rem;
+    --mobile-phone-card-width: 13rem;
+    --mobile-phone-card-height: 26rem;
 }
 
 /* GENERAL ELEMENT STYLES */
@@ -179,15 +211,3 @@ p {
     justify-content: center;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) 0;
-}
-
-.card .icon {
-    height: 50px;
-    margin: 0 0 var(--spacing-sm) 0;
-}

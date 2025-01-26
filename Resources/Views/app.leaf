@@ -16,7 +16,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="/"><img src="/Images/logo.png" alt="logo"></a>
+        <a href="/home"><img src="/Images/logo.png" alt="logo"></a>
         <ul class="menu">
             <li><a href="/app/chefm8">Apps</a></li>
             <li><a href="/about">About Me</a></li>

@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.navbar img {
+.navbar a img {
     width: var(--navbar-image-width);
 }
 

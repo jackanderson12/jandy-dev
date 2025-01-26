@@ -8,6 +8,7 @@ func routes(_ app: Application) throws {
     
     // Home page
     app.get(use: homeController.index)
+    app.get("home", use: homeController.index)
     
     // Blog posts
     app.get("blog_posts", use: blogPostController.index) // Render blog posts view

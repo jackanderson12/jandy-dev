@@ -10,7 +10,7 @@
     margin: 0 0 var(--spacing-md) 0;
     box-sizing: border-box;
 }
-.navbar img {
+.navbar a img {
     max-width: var(--navbar-image-width);
     max-height: var(--navbar-image-height);
 }
@@ -45,7 +45,7 @@
 
 .section-container {
     margin: 0;
-    max-width: 95%;
+    max-width: var(--standard-width);
     padding: var(--spacing-sm);
 }
 

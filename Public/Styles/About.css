@@ -20,7 +20,7 @@
         background-color: var(--color-primary-with-opacity);
     }
     
-    .navbar img {
+    .navbar a img {
         max-width: var(--navbar-image-width);
     }
     
@@ -233,7 +233,7 @@
         box-sizing: border-box;
     }
     
-    .navbar img {
+    .navbar a img {
         width: var(--navbar-image-width);
         height: var(--navbar-image-height);
     }

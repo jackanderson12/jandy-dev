@@ -14,7 +14,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="/"><img src="/Images/logo.png" alt="logo"></a>
+        <a href="/home"><img src="/Images/logo.png" alt="logo"></a>
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>

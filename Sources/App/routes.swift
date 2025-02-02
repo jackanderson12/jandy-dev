@@ -34,5 +34,13 @@ func routes(_ app: Application) throws {
     // App Page
     app.get("app", ":id", use: appController.index)
     app.get("feature-text", ":imageName", use: appController.getFeatureText)
+    
+    // Images from the Cloud Storage Mounted Volume
+    app.get("Images", ":filename") { req -> Response in
+        let filename = req.parameters.get("filename")!
+        let path = "/Images/\(filename)"
+
+        return req.fileio.streamFile(at: path)
+    }
 }
 

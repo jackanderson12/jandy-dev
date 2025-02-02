@@ -43,8 +43,6 @@ public func configure(_ app: Application) async throws {
     // Configure SQLite database with a file
     app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
     
-
-    
     // Run migrations
     app.migrations.add(CreateBlogPost())
 

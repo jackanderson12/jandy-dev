@@ -57,7 +57,7 @@ class BlogPostController {
     
     // Function to handle image upload separately
     private func imageUpload(req: Request, files: [File]) -> EventLoopFuture<[String]> {
-        let directory = req.application.directory.publicDirectory + "Images/"
+        let directory = "Images/"
         let allowedExtensions = ["png", "jpeg", "jpg", "gif"]
         var storedFilenames: [String] = []
         

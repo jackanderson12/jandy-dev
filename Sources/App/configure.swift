@@ -23,8 +23,13 @@ public func configure(_ app: Application) async throws {
     // Increase the maximum request body size (e.g., 50MB)
     app.routes.defaultMaxBodySize = "50mb"
     
-    // Serve files from the /Public folder
-    app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+    // Define directories
+    let imageDir = "/Images/" // Use the mounted Google Cloud Storage volume
+    let publicDir = app.directory.publicDirectory // Keep the public folder for static files like JS and CSS
+    
+    // Serve files from both directories
+    app.middleware.use(FileMiddleware(publicDirectory: publicDir)) // For CSS, JS, etc.
+    app.middleware.use(FileMiddleware(publicDirectory: imageDir)) // Serve images from the mounted volume
 
     // Use Leaf for views
     app.views.use(.leaf)

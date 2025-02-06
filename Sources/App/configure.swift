@@ -2,6 +2,7 @@ import Leaf
 import Vapor
 import Fluent
 import FluentSQLiteDriver
+import GoogleCloudKit
 
 // Configures your application
 public func configure(_ app: Application) async throws {
@@ -24,12 +25,10 @@ public func configure(_ app: Application) async throws {
     app.routes.defaultMaxBodySize = "50mb"
     
     // Define directories
-    let imageDir = "/Images/" // Use the mounted Google Cloud Storage volume
-    let publicDir = app.directory.publicDirectory // Keep the public folder for static files like JS and CSS
+    let publicDir = app.directory.publicDirectory
     
     // Serve files from both directories
-    app.middleware.use(FileMiddleware(publicDirectory: publicDir)) // For CSS, JS, etc.
-    app.middleware.use(FileMiddleware(publicDirectory: imageDir)) // Serve images from the mounted volume
+    app.middleware.use(FileMiddleware(publicDirectory: publicDir))
 
     // Use Leaf for views
     app.views.use(.leaf)
@@ -47,6 +46,15 @@ public func configure(_ app: Application) async throws {
     
     // Configure SQLite database with a file
     app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    
+    // Google Cloud Storage Configuration
+    app.googleCloud.initializeStorage(
+        config: .init(
+            credentials: .environment,
+            project: "your-gcp-project-id",
+            storageBucket: "your-bucket-name"
+        )
+    )
     
     // Run migrations
     app.migrations.add(CreateBlogPost())

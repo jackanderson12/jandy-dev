@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Lifestyle Blog Posts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel='shortcut icon' type='image/x-icon' href='https://storage.cloud.google.com/jandy-dev-images/favicon.ico'/>
+        <link rel='shortcut icon' type='image/x-icon' href='/jandy-dev-images/favicon.ico'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -15,7 +15,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="/home"><img src="https://storage.cloud.google.com/jandy-dev-images/logo.png" alt="logo"></a>
+        <a href="/home"><img src="/jandy-dev-images/logo.png" alt="logo"></a>
         <ul class="menu">
             <li><a href="/blog_posts/tech">Tech</a></li>
             <li><a href="/blog_posts/lifestyle">Lifestyle</a></li>
@@ -82,7 +82,7 @@
                     <p>#preview(post.body)</p>
                     <div class="blog-images">
                         #for(image in post.imageData):
-                        <img src="https://storage.cloud.google.com/jandy-dev-images/#(image)" alt="Blog Image">
+                        <img src="/jandy-dev-images/#(image)" alt="Blog Image">
                         #endfor
                     </div>
                     <a href="/blog_posts/view_post/#(post.id)">Read More...</a>

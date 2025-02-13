@@ -2,7 +2,6 @@ import Leaf
 import Vapor
 import Fluent
 import FluentSQLiteDriver
-import GoogleCloudKit
 
 // Configures your application
 public func configure(_ app: Application) async throws {
@@ -46,15 +45,6 @@ public func configure(_ app: Application) async throws {
     
     // Configure SQLite database with a file
     app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
-    
-    // Google Cloud Storage Configuration
-    app.googleCloud.initializeStorage(
-        config: .init(
-            credentials: .environment,
-            project: "your-gcp-project-id",
-            storageBucket: "your-bucket-name"
-        )
-    )
     
     // Run migrations
     app.migrations.add(CreateBlogPost())

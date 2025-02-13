@@ -57,7 +57,7 @@ class BlogPostController {
     
     // Function to handle image upload separately
     private func imageUpload(req: Request, files: [File]) -> EventLoopFuture<[String]> {
-        let directory = "/Images/"
+        let directory = "/Public/Images/"
         let allowedExtensions = ["png", "jpeg", "jpg", "gif"]
         var storedFilenames: [String] = []
         
@@ -105,7 +105,7 @@ class BlogPostController {
             filenameIndex += 1
             
             // Change the image path to the correct location on the server
-            return "<img src=\"/Images/\(newFilename)\">"
+            return "<img src=\"/Public/Images/\(newFilename)\">"
         })
         
         // Convert Markdown to HTML with updated image references

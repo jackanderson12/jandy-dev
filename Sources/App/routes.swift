@@ -5,7 +5,6 @@ func routes(_ app: Application) throws {
     let blogPostController = BlogPostController()
     let aboutController = AboutController()
     let appController = AppController()
-    let imageController = ImageController()
     
     // Home page
     app.get(use: homeController.index)
@@ -28,15 +27,13 @@ func routes(_ app: Application) throws {
     // About page
     app.get("about", use: aboutController.index)
     // Success page
-        app.get("about", "contact_success") { req in
-            return req.view.render("contact_success")
-        }
+    app.get("about", "contact_success") { req in
+        return req.view.render("contact_success")
+    }
     
     // App Page
     app.get("app", ":id", use: appController.index)
     app.get("feature-text", ":imageName", use: appController.getFeatureText)
     
-    // Images from the Cloud Storage Signed URL
-    app.get("signed-url", ":filename", use: imageController.getSignedImageURL)
 }
 

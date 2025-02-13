@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Message Sent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='shortcut icon' type='image/x-icon' href='https://storage.cloud.google.com/jandy-dev-images/favicon.ico'/>
+    <link rel='shortcut icon' type='image/x-icon' href='/jandy-dev-images/favicon.ico'/>
     <link rel="stylesheet" href="/Styles/base.css">
     <link rel="stylesheet" href="/Styles/about.css">
 </head>

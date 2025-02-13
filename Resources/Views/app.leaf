@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='shortcut icon' type='image/x-icon' href='https://storage.cloud.google.com/jandy-dev-images/favicon.ico'/>
+    <link rel='shortcut icon' type='image/x-icon' href='/jandy-dev-images/favicon.ico'/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
@@ -17,7 +17,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="/home"><img src="/Images/logo.png" alt="logo"></a>
+        <a href="/home"><img src="/jandy-dev-images/logo.png" alt="logo"></a>
         <ul class="menu">
             <li><a href="/app/chefm8">Apps</a></li>
             <li><a href="/about">About Me</a></li>
@@ -92,16 +92,16 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img src="https://storage.cloud.google.com/jandy-dev-images/chefm8_images/cookbook_page.png">
+                            <img src="/jandy-dev-images/chefm8-images/cookbook_page.png">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://storage.cloud.google.com/jandy-dev-images/chefm8_images/recipe_info_page.png">
+                            <img src="/jandy-dev-images/chefm8-images/recipe_info_page.png">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://storage.cloud.google.com/jandy-dev-images/chefm8_images/shopping_cart_page.png">
+                            <img src="/jandy-dev-images/chefm8-images/shopping_cart_page.png">
                         </div>
                         <div class="swiper-slide">
-                            <img src="https://storage.cloud.google.com/jandy-dev-images/chefm8_images/add_recipe_page.png">
+                            <img src="/jandy-dev-images/chefm8-images/add_recipe_page.png">
                         </div>
                       </div>
                       <!-- If we need pagination -->
@@ -142,16 +142,16 @@
                        <div class="swiper-wrapper">
                          <!-- Slides -->
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/gamblit_images/games_view_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/games_view_page.png">
                          </div>
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/gamblit_images/event_view_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/event_view_page.png">
                          </div>
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/gamblit_images/create_gamble_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/create_gamble_page.png">
                          </div>
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/gamblit_images/feed_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/feed_page.png">
                          </div>
                        </div>
                        <!-- If we need pagination -->
@@ -191,10 +191,10 @@
                        <div class="swiper-wrapper">
                          <!-- Slides -->
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/roebling_images/hero_desktop.png">
+                             <img src="/jandy-dev-images/roebling-images/hero_desktop.png">
                          </div>
                          <div class="swiper-slide">
-                             <img src="https://storage.cloud.google.com/jandy-dev-images/roebling_images/hero_mobile.png">
+                             <img src="/jandy-dev-images/roebling-images/hero_mobile.png">
                          </div>
                        </div>
                        <!-- If we need pagination -->

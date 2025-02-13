@@ -25,7 +25,11 @@ public func configure(_ app: Application) async throws {
     
     // Serve files from both directories
     app.middleware
-        .use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
+        .use(
+            FileMiddleware(
+                publicDirectory: app.directory.workingDirectory + "Public/"
+            )
+        )
 
     // Use Leaf for views
     app.views.use(.leaf)

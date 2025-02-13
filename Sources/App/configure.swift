@@ -23,11 +23,9 @@ public func configure(_ app: Application) async throws {
     // Increase the maximum request body size (e.g., 50MB)
     app.routes.defaultMaxBodySize = "50mb"
     
-    // Define directories
-    let publicDir = app.directory.publicDirectory
-    
     // Serve files from both directories
-    app.middleware.use(FileMiddleware(publicDirectory: publicDir))
+    app.middleware
+        .use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     // Use Leaf for views
     app.views.use(.leaf)

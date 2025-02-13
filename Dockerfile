@@ -48,15 +48,15 @@ RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w
 # ================================
 FROM swift:5.9-jammy-slim
 
-# Make sure all system packages are up to date, and install only essential packages.
+# Install required packages
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
     && apt-get -q update \
     && apt-get -q dist-upgrade -y \
     && apt-get -q install -y \
-      ca-certificates \
-      tzdata \
+        ca-certificates \
+        tzdata
 
-# Create a vapor user and group with /app as its home directory
+# Create a vapor user and group
 RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vapor
 
 # Switch to the new home directory

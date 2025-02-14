@@ -27,7 +27,7 @@ COPY . .
 RUN swift build -c release --static-swift-stdlib \
     # Workaround for https://github.com/apple/swift/pull/68669
     # This can be removed as soon as 5.9.1 is released, but is harmless if left in.
-    -Xlinker -u -Xlinker *swift*backtrace_isThunkFunction
+    -Xlinker -u -Xlinker _swift_backtrace_isThunkFunction
 
 # Switch to the staging area
 WORKDIR /staging
@@ -40,6 +40,7 @@ RUN find -L "$(swift build --package-path /build -c release --show-bin-path)/" -
 
 # Copy any resources from the public directory and views directory if the directories exist
 # Ensure that by default, neither the directory nor any of its contents are writable.
+RUN mkdir -p ./Public && [ -d /build/Public ] && cp -r /build/Public/* ./Public/ || true
 RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w ./Resources; } || true
 
 # ================================
@@ -55,12 +56,8 @@ RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
         ca-certificates \
         tzdata
 
-# Create a vapor user and group with necessary permissions
-RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vapor \
-    && usermod -a -G root vapor
-
-# Create Public directory with proper permissions
-RUN mkdir -p /Public && chown vapor:vapor /Public && chmod 755 /Public
+# Create a vapor user and group
+RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vapor
 
 # Switch to the new home directory
 WORKDIR /app

@@ -25,10 +25,10 @@ jobs:
       uses: google-github-actions/upload-cloud-storage@v2
       with:
         path: './Public/Styles'
-        destination: 'jandy-dev-images/'
+        destination: 'jandy-dev-images'
 
     - id: upload-javascript-folder
       uses: google-github-actions/upload-cloud-storage@v2
       with:
         path: './Public/Javascript'
-        destination: 'jandy-dev-images/'
+        destination: 'jandy-dev-images'

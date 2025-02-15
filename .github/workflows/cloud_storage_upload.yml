@@ -26,9 +26,16 @@ jobs:
       with:
         path: './Public/Styles'
         destination: 'jandy-dev-images'
+        gzip: false
+        headers: |-
+          content-type: 'text/css'
+        
 
     - id: upload-javascript-folder
       uses: google-github-actions/upload-cloud-storage@v2
       with:
         path: './Public/Javascript'
         destination: 'jandy-dev-images'
+        gzip: false
+        headers: |-
+          content-type: 'application/javascript'

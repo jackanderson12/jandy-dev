@@ -142,16 +142,16 @@
                        <div class="swiper-wrapper">
                          <!-- Slides -->
                          <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/games_view_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/games_view_page.PNG">
                          </div>
                          <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/event_view_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/event_view_page.PNG">
                          </div>
                          <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/create_gamble_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/create_gamble_page.PNG">
                          </div>
                          <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/feed_page.png">
+                             <img src="/jandy-dev-images/gamblit-images/feed_page.PNG">
                          </div>
                        </div>
                        <!-- If we need pagination -->
@@ -194,7 +194,7 @@
                              <img src="/jandy-dev-images/roebling-images/hero_desktop.png">
                          </div>
                          <div class="swiper-slide">
-                             <img src="/jandy-dev-images/roebling-images/hero_mobile.png">
+                             <img src="/jandy-dev-images/roebling-images/hero_mobile.PNG">
                          </div>
                        </div>
                        <!-- If we need pagination -->

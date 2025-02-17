@@ -24,6 +24,7 @@ services:
       - ./Database:/app/Database
       - ~/jandy-dev-images-bucket:/app/Public
     env_file:
+      - ENVIRONMENT=development
       - .env
     environment:
       - LOG_LEVEL=debug

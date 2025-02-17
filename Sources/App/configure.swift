@@ -2,6 +2,7 @@ import Leaf
 import Vapor
 import Fluent
 import FluentSQLiteDriver
+import FluentPostgresDriver
 
 // Configures your application
 public func configure(_ app: Application) async throws {
@@ -41,10 +42,36 @@ public func configure(_ app: Application) async throws {
         try fileManager.createDirectory(atPath: databaseDir, withIntermediateDirectories: true, attributes: nil)
     }
     
-    // Configure SQLite database with a file
-    app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    // Database configuration based on environment
+    if app.environment == .development {
+        // Use SQLite for development
+        let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
+        app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    } else {
+        // Use PostgreSQL for production
+        guard
+            let hostname = Environment.get("DATABASE_HOST"),
+            let username = Environment.get("DATABASE_USERNAME"),
+            let password = Environment.get("DATABASE_PASSWORD"),
+            let databaseName = Environment.get("DATABASE_NAME")
+        else {
+            fatalError("Missing production database configuration.")
+        }
+        app.databases.use(
+            .postgres(
+                configuration: .init(
+                    hostname: hostname,
+                    username: username,
+                    password: password,
+                    database: databaseName,
+                    tls: .disable
+                )
+            ),
+            as: .psql
+        )
+    }
     
-    // Run migrations
+    // Migration for the Blog
     app.migrations.add(CreateBlogPost())
 
     // Run migrations automatically

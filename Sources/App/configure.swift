@@ -34,7 +34,6 @@ public func configure(_ app: Application) async throws {
     app.leaf.tags["feature"] = SwiperFeatureTag()
     
     let databaseDir = app.directory.workingDirectory + "Database/"
-    let databasePath = databaseDir + "db.sqlite"
 
     // Ensure the Database directory exists
     let fileManager = FileManager.default

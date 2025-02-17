@@ -43,10 +43,11 @@ public func configure(_ app: Application) async throws {
     }
     
     // Database configuration based on environment
-    if app.environment == .development {
+    if Environment.get("ENVIRONMENT") ==  "development" {
         // Use SQLite for development
         let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
         app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+        print("Running in development mode with SQLite database.")
     } else {
         // Use PostgreSQL for production
         guard
@@ -69,6 +70,7 @@ public func configure(_ app: Application) async throws {
             ),
             as: .psql
         )
+        print("Production database configuration loaded.")
     }
     
     // Migration for the Blog

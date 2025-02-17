@@ -12,8 +12,6 @@
 #      Start app: docker-compose up app
 #       Stop all: docker-compose down
 #
-version: '3.7'
-
 services:
   app:
     image: jandy-app
@@ -24,7 +22,6 @@ services:
       - ./Database:/app/Database
       - ~/jandy-dev-images-bucket:/app/Public
     env_file:
-      - ENVIRONMENT=development
       - .env
     environment:
       - LOG_LEVEL=debug

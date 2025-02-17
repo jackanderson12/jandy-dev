@@ -42,7 +42,7 @@ public func configure(_ app: Application) async throws {
     }
     
     // Database configuration based on environment
-    if Environment.get("ENVIRONMENT") ==  "development" {
+    if Environment.get("DB_ENV") ==  "development" {
         // Use SQLite for development
         let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
         app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)

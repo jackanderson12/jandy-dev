@@ -39,7 +39,7 @@ public func configure(_ app: Application) async throws {
         let password = Environment.get("DATABASE_PASSWORD"),
         let databaseName = Environment.get("DATABASE_NAME")
     else {
-        fatalError("Missing production database configuration.")
+        return
     }
     app.databases.use(
         .postgres(

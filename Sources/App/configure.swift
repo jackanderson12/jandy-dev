@@ -34,6 +34,7 @@ public func configure(_ app: Application) async throws {
     app.leaf.tags["feature"] = SwiperFeatureTag()
     
     let databaseDir = app.directory.workingDirectory + "Database/"
+    let databasePath = databaseDir + "db.sqlite"
 
     // Ensure the Database directory exists
     let fileManager = FileManager.default
@@ -42,7 +43,7 @@ public func configure(_ app: Application) async throws {
     }
     
     // Database configuration based on environment
-    if Environment.get("DB_ENV") ==  "development" {
+    if app.environment == .development {
         // Use SQLite for development
         let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
         app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
@@ -55,7 +56,8 @@ public func configure(_ app: Application) async throws {
             let password = Environment.get("DATABASE_PASSWORD"),
             let databaseName = Environment.get("DATABASE_NAME")
         else {
-            fatalError("Missing production database configuration.")
+//            fatalError("Missing production database configuration.")
+            return
         }
         app.databases.use(
             .postgres(

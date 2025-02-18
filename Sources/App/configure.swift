@@ -1,6 +1,7 @@
 import Leaf
 import Vapor
 import Fluent
+import FluentSQLiteDriver
 import FluentPostgresDriver
 
 // Configures your application
@@ -26,38 +27,50 @@ public func configure(_ app: Application) async throws {
     // Serve files from both directories
     app.middleware
         .use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
-    
+
     // Use Leaf for views
     app.views.use(.leaf)
     app.leaf.tags["preview"] = PreviewTag()
     app.leaf.tags["feature"] = SwiperFeatureTag()
     
-    // Use PostgreSQL for production
-    guard
-        let hostname = Environment.get("DATABASE_HOST"),
-        let username = Environment.get("DATABASE_USERNAME"),
-        let password = Environment.get("DATABASE_PASSWORD"),
-        let databaseName = Environment.get("DATABASE_NAME")
-    else {
-        return
+    let databaseDir = app.directory.workingDirectory + "Database/"
+
+    // Ensure the Database directory exists
+    let fileManager = FileManager.default
+    if !fileManager.fileExists(atPath: databaseDir) {
+        try fileManager.createDirectory(atPath: databaseDir, withIntermediateDirectories: true, attributes: nil)
     }
-    app.databases.use(
-        .postgres(
-            configuration: .init(
-                hostname: hostname,
-                username: username,
-                password: password,
-                database: databaseName,
-                tls: .disable
-            )
-        ),
-        as: .psql
-    )
-    print("Production database configuration loaded.")
+    
+    // Use SQLite for development
+    let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
+    app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    
+    // Use PostgreSQL for production
+//    guard
+//        let hostname = Environment.get("DATABASE_HOST"),
+//        let username = Environment.get("DATABASE_USERNAME"),
+//        let password = Environment.get("DATABASE_PASSWORD"),
+//        let databaseName = Environment.get("DATABASE_NAME")
+//    else {
+//        return
+//    }
+//    app.databases.use(
+//        .postgres(
+//            configuration: .init(
+//                hostname: hostname,
+//                username: username,
+//                password: password,
+//                database: databaseName,
+//                tls: .disable
+//            )
+//        ),
+//        as: .psql
+//    )
+//    print("Production database configuration loaded.")
     
     // Migration for the Blog
     app.migrations.add(CreateBlogPost())
-    
+
     // Run migrations automatically
     try await app.autoMigrate()
     

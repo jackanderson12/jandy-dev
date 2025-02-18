@@ -25,6 +25,11 @@ enum Entrypoint {
             try? await app.asyncShutdown()
             throw error
         }
+        
+        let port = Environment.get("PORT") ?? "8080"
+        app.http.server.configuration.port = Int(port)!
+        
+        
         try await app.execute()
         try await app.asyncShutdown()
     }

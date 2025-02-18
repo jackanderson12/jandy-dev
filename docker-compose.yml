@@ -14,7 +14,7 @@
 #
 services:
   app:
-    image: jandy-app
+    image: jandy-image:latest
     build: .
     ports:
       - "8080:8080"

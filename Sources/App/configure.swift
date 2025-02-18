@@ -33,40 +33,40 @@ public func configure(_ app: Application) async throws {
     app.leaf.tags["preview"] = PreviewTag()
     app.leaf.tags["feature"] = SwiperFeatureTag()
     
-    let databaseDir = app.directory.workingDirectory + "Database/"
-
-    // Ensure the Database directory exists
-    let fileManager = FileManager.default
-    if !fileManager.fileExists(atPath: databaseDir) {
-        try fileManager.createDirectory(atPath: databaseDir, withIntermediateDirectories: true, attributes: nil)
-    }
-    
-    // Use SQLite for development
-    let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
-    app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
-    
     // Use PostgreSQL for production
-//    guard
-//        let hostname = Environment.get("DATABASE_HOST"),
-//        let username = Environment.get("DATABASE_USERNAME"),
-//        let password = Environment.get("DATABASE_PASSWORD"),
-//        let databaseName = Environment.get("DATABASE_NAME")
-//    else {
-//        return
-//    }
-//    app.databases.use(
-//        .postgres(
-//            configuration: .init(
-//                hostname: hostname,
-//                username: username,
-//                password: password,
-//                database: databaseName,
-//                tls: .disable
-//            )
-//        ),
-//        as: .psql
-//    )
-//    print("Production database configuration loaded.")
+    if let hostname = Environment.get("DATABASE_HOST"),
+       let username = Environment.get("DATABASE_USERNAME"),
+       let password = Environment.get("DATABASE_PASSWORD"),
+       let databaseName = Environment.get("DATABASE_NAME")
+    {
+        app.databases.use(
+            .postgres(
+                configuration: .init(
+                    hostname: hostname,
+                    port: 5432,
+                    username: username,
+                    password: password,
+                    database: databaseName,
+                    tls: .disable
+                )
+            ),
+            as: .psql
+        )
+        print("Production database configuration loaded.")
+    } else {
+        let databaseDir = app.directory.workingDirectory + "Database/"
+
+        // Ensure the Database directory exists
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: databaseDir) {
+            try fileManager.createDirectory(atPath: databaseDir, withIntermediateDirectories: true, attributes: nil)
+        }
+        
+        // Use SQLite for development
+        let databasePath = app.directory.workingDirectory + "Database/db.sqlite"
+        app.databases.use(.sqlite(.file(databasePath)), as: .sqlite)
+    }
+
     
     // Migration for the Blog
     app.migrations.add(CreateBlogPost())

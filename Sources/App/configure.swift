@@ -45,17 +45,19 @@ public func configure(_ app: Application) async throws {
     // Construct the connection string.
     // Note: When connecting via Unix socket, there is no hostname before the slash.
     
-    var connectionString: String = ""
-    
     if let unixSocket = Environment.get("INSTANCE_UNIX_SOCKET") {
-        connectionString = "postgres://\(username):\(password)@/\(databaseName)?unix_socket=\(unixSocket)"
-        guard let url = URL(string: connectionString),
-              let config = try? SQLPostgresConfiguration(url: url)
-        else {
-            fatalError("Invalid DATABASE_URL")
-        }
-
-        app.databases.use(.postgres(configuration: config), as: .psql)
+        app.databases.use(
+            .postgres(
+                configuration: .init(
+                    unixDomainSocketPath: unixSocket,
+                    username: username,
+                    password: password,
+                    database: databaseName
+                )
+            ),
+            as: .psql
+        )
+        print("Production Database Loaded via Unix Socket.")
     } else {
         guard let hostname = Environment.get("DB_HOST") else {
             fatalError("Host Name failed to resolve")
@@ -72,7 +74,7 @@ public func configure(_ app: Application) async throws {
                 ),
                 as: .psql
             )
-            print("Production database configuration loaded.")
+        print("Production Database Loaded via Hostname.")
     }
     
     // Migration for the Blog

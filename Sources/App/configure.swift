@@ -42,14 +42,12 @@ public func configure(_ app: Application) async throws {
         fatalError("Missing required environment variables")
     }
 
-    // Construct the connection string.
-    // Note: When connecting via Unix socket, there is no hostname before the slash.
-    
+    // Use PostgreSQL for production via Unix socket, use only on Google CLoud
     if let unixSocket = Environment.get("INSTANCE_UNIX_SOCKET") {
         app.databases.use(
             .postgres(
                 configuration: .init(
-                    unixDomainSocketPath: unixSocket,
+                    unixDomainSocketPath: "\(unixSocket)/.s.PGSQL.5432",
                     username: username,
                     password: password,
                     database: databaseName
@@ -59,10 +57,9 @@ public func configure(_ app: Application) async throws {
         )
         print("Production Database Loaded via Unix Socket.")
     } else {
-        guard let hostname = Environment.get("DB_HOST") else {
-            fatalError("Host Name failed to resolve")
-        }
-        app.databases.use(
+        // Use PostgreSQL for production via TCP, use for local Testing
+        if let hostname = Environment.get("DB_HOST") {
+            app.databases.use(
                 .postgres(
                     configuration: .init(
                         hostname: hostname,
@@ -74,7 +71,8 @@ public func configure(_ app: Application) async throws {
                 ),
                 as: .psql
             )
-        print("Production Database Loaded via Hostname.")
+            print("Production Database Loaded via Hostname.")
+        }
     }
     
     // Migration for the Blog

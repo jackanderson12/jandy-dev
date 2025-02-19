@@ -35,7 +35,6 @@ public func configure(_ app: Application) async throws {
     
     // Use PostgreSQL for production
     guard
-        let unixSocket = Environment.get("INSTANCE_UNIX_SOCKET"),  // e.g., "/cloudsql/project:region:instance"
         let username = Environment.get("DB_USER"),
         let password = Environment.get("DB_PASS"),
         let databaseName = Environment.get("DB_NAME")
@@ -45,15 +44,36 @@ public func configure(_ app: Application) async throws {
 
     // Construct the connection string.
     // Note: When connecting via Unix socket, there is no hostname before the slash.
-    let connectionString = "postgres://\(username):\(password)@/\(databaseName)?host=\(unixSocket)&sslmode=disable"
+    
+    var connectionString: String = ""
+    
+    if let unixSocket = Environment.get("INSTANCE_UNIX_SOCKET") {
+        connectionString = "postgres://\(username):\(password)@/\(databaseName)?unix_socket=\(unixSocket)"
+        guard let url = URL(string: connectionString),
+              let config = try? SQLPostgresConfiguration(url: url)
+        else {
+            fatalError("Invalid DATABASE_URL")
+        }
 
-    guard let url = URL(string: connectionString),
-          let config = PostgresConfiguration(url: url)
-    else {
-        fatalError("Invalid DATABASE_URL")
+        app.databases.use(.postgres(configuration: config), as: .psql)
+    } else {
+        guard let hostname = Environment.get("DB_HOST") else {
+            fatalError("Host Name failed to resolve")
+        }
+        app.databases.use(
+                .postgres(
+                    configuration: .init(
+                        hostname: hostname,
+                        username: username,
+                        password: password,
+                        database: databaseName,
+                        tls: .disable
+                    )
+                ),
+                as: .psql
+            )
+            print("Production database configuration loaded.")
     }
-
-    app.databases.use(.postgres(configuration: config), as: .psql)
     
     // Migration for the Blog
     app.migrations.add(CreateBlogPost())

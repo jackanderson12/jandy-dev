@@ -31,6 +31,7 @@ public func configure(_ app: Application) async throws {
     // Use Leaf for views
     app.views.use(.leaf)
     app.leaf.tags["preview"] = PreviewTag()
+    app.leaf.tags["imagePreview"] = PreviewImage()
     app.leaf.tags["feature"] = SwiperFeatureTag()
     
     // Use PostgreSQL for production
@@ -57,22 +58,8 @@ public func configure(_ app: Application) async throws {
         )
         print("Production Database Loaded via Unix Socket.")
     } else {
-        // Use PostgreSQL for production via TCP, use for local Testing
-        if let hostname = Environment.get("DB_HOST") {
-            app.databases.use(
-                .postgres(
-                    configuration: .init(
-                        hostname: hostname,
-                        username: username,
-                        password: password,
-                        database: databaseName,
-                        tls: .disable
-                    )
-                ),
-                as: .psql
-            )
-            print("Production Database Loaded via Hostname.")
-        }
+        app.databases.use(.sqlite(.file("./Database/db.sqlite")), as: .sqlite)
+        print("Using SQLite Database in Development Mode.")
     }
     
     // Migration for the Blog

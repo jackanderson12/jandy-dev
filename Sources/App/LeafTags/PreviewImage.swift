@@ -11,17 +11,16 @@ enum PreviewImageError: Error {
     case noImageInPost
 }
 
-struct PreviewImage: UnsafeUnescapedLeafTag {
+struct PreviewImage: LeafTag {
     func render(_ ctx: LeafContext) throws -> LeafData {
-        // Ensure we have at least one Image
-        guard let first = ctx.parameters.first?.string else {
-            throw PreviewImageError.noImageInPost
+        // Expecting the parameter to be an array of strings
+        if let imageArray = ctx.parameters.first?.array,
+           let firstImageData = imageArray.first?.string {
+            return LeafData.string(firstImageData)
+        } else if let singleValue = ctx.parameters.first?.string {
+            return LeafData.string(singleValue)
         }
-
-        // Set the first image to what we want to return
-        let previewImageUrl = first
-        
-        return LeafData.string("\(previewImageUrl)")
+        throw PreviewImageError.noImageInPost
     }
 }
 

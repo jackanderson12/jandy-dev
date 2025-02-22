@@ -28,7 +28,6 @@ final class BlogPost: Model, Content {
         let markdownParser = MarkdownParser()
         let result = markdownParser.parse(body)
         let html = result.html
-        print("Markdown Output: \(html)")
         return html
     }
 

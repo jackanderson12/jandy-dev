@@ -80,9 +80,11 @@
                 #for(post in posts):
                 <div class="blog-item">
                     <p>#preview(post.body)</p>
-                    <div class="blog-images">
-                        <img src="/jandy-dev-images/#previewImage(post.imageData)" alt="Blog Image">
-                    </div>
+<!--                    <div class="blog-images">-->
+<!--                        #for(image in post.imageData):-->
+<!--                        <img src="/jandy-dev-images/#(image)" alt="Blog Image">-->
+<!--                        #endfor-->
+<!--                    </div>-->
                     <a href="/blog_posts/view_post/#(post.id)">Read More...</a>
                     <p><strong>Tags:</strong> #(post.tags)</p>
                 </div>

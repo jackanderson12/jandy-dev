@@ -129,10 +129,12 @@
          <div class="section-container">
              <h2>Gamblit</h2>
              <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
-             <p>
-                 Gamblit is a scoial media and sports gambling visualization app. It creates a fun
-                 environment for users to share their gambles with their friends.
-             </p>
+             <ul class="app-overview">
+                 <li>
+                     Gamblit is a scoial media and sports gambling visualization app. It creates a fun
+                     environment for users to share their gambles with their friends.
+                 </li>
+             </ul>
              <h5>Feature Preview</h5>
              <div class="two-column">
                  <div class="col-left">
@@ -179,9 +181,11 @@
          <div class="section-container">
              <h2>Roebling</h2>
              <a href="https://roebling.us">Roebling Link</a>
-             <p>
-                 Roebling is a web application to help small businesses secure loans for crucial equipment.
-             </p>
+             <ul class="app-overview">
+                 <li>
+                     Roebling is a web application to help small businesses secure loans for crucial equipment.
+                </li>
+             </ul>
              <h5>Feature Preview</h5>
              <div class="two-column">
                  <div class="col-left">

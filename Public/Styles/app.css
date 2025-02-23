@@ -84,7 +84,7 @@
     }
     
     .catergory-container {
-        margin: var(--spacing-xl) auto;
+        margin: var(--spacing-xl) auto var(--spacing-sm) auto;
     }
     
     .catergory-container .menu a {
@@ -99,6 +99,43 @@
     .two-column .col-left, .two-column .col-right {
         width: 100%; /* Make columns take full width */
         text-align: center; /* Optional: Center-align text */
+    }
+    
+    .section-container {
+        margin: var(--spacing-sm) auto;
+    }
+    
+    .chefm8-section {
+        width: 100%;
+        padding: var(--spacing-xs);
+    }
+    
+    .chefm8-section .section-container h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .gamblit-section {
+        width: 100%;
+        padding: var(--spacing-xs);
+    }
+    
+    .gamblit-section .section-container h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .roebling-section {
+        width: 100%;
+        padding: var(--spacing-xs);
+    }
+    
+    .roebling-section .section-container h2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -242,7 +279,7 @@
 /* Image Swiper */
 .swiper {
     positon: relative;
-    width: 26rem;
+    width: 24rem;
     height: 50rem;
 }
 

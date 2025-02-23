@@ -49,6 +49,10 @@
     padding: var(--spacing-sm);
 }
 
+.section-container .intro-container p {
+    padding: var(--spacing-sm);
+}
+
 /* Search Container */
 .search-container {
     margin: var(--spacing-medge) 0;
@@ -86,6 +90,7 @@
 .blog-container h6 {
     font-weight: 600;
     color: var(--color-tertiary);
+    padding: var(--spacing-sm);
 }
 
 /* Blog List */

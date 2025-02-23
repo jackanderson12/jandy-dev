@@ -52,6 +52,10 @@
     padding: var(--spacing-sm);
 }
 
+pre {
+    tab-size: 4;
+}
+
 .blog-item {
     width: 95%;
     margin-bottom: var(--spacing-md);

@@ -23,7 +23,6 @@ func routes(_ app: Application) throws {
     app.get("blog_posts", "lifestyle", use: blogPostController.lifestyleIndex) // Render blog posts view
     app.get("blog_posts", "lifestyle", ":subcategory", use: blogPostController.lifestyleIndex) // Lifestyle posts by subcategory
 
-
     // About page
     app.get("about", use: aboutController.index)
     // Success page

@@ -21,8 +21,8 @@ public func configure(_ app: Application) async throws {
         print("Failed to load the web form api key")
     }
     
-    // Increase the maximum request body size (e.g., 50MB)
-    app.routes.defaultMaxBodySize = "50mb"
+    // Increase the maximum request body size (200MB)
+    app.routes.defaultMaxBodySize = "200mb"
     
     // Serve files from both directories
     app.middleware

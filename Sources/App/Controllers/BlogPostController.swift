@@ -1,9 +1,23 @@
+//
+//  BlogPostController.swift
+//  Jandy
+//
+//  Created by Jack Anderson on 1/1/25.
+//
 import Vapor
 import Fluent
 import Ink
 
+/// Controller responsible for handling blog post operations:
+/// - Listing all blog posts
+/// - Displaying a single blog post (with Markdown-to-HTML conversion)
+/// - Creating new blog posts (with image uploads and Markdown processing)
+/// - Deleting posts and searching posts
 class BlogPostController {
-    // Handle getting all blog posts from the db and display them using blog_posts.leaf
+    /// Retrieves all blog posts from the database and renders the "blogs" Leaf template.
+    ///
+    /// - Parameter req: The incoming request.
+    /// - Returns: A future view that displays all blog posts.
     func index(req: Request) throws -> EventLoopFuture<View> {
         return BlogPost.query(on: req.db).all().flatMap { posts in
             let context = ["posts": posts] // Passing data to the Leaf template
@@ -11,6 +25,10 @@ class BlogPostController {
         }
     }
     
+    /// Retrieves a single blog post by its UUID and renders the "view_post" Leaf template.
+    ///
+    /// - Parameter req: The incoming request.
+    /// - Returns: A future view that displays a single blog post.
     func viewPost(req: Request) throws -> EventLoopFuture<View> {
         guard let postID = req.parameters.get("id", as: UUID.self) else {
             throw Abort(.badRequest, reason: "Invalid post ID format")
@@ -27,6 +45,15 @@ class BlogPostController {
             }
     }
     
+    /// Creates a new blog post.
+    ///
+    /// The function expects the request to include:
+    /// - Markdown text in the `body`
+    /// - A string of tags in `tags`
+    /// - Zero or more uploaded image files in `files`
+    ///
+    /// - Parameter req: The incoming request.
+    /// - Returns: A future BlogPost after saving it to the database.
     func create(req: Request) throws -> EventLoopFuture<BlogPost> {
         let apiKey = req.headers["X-API-Key"].first
         
@@ -55,7 +82,14 @@ class BlogPostController {
         }
     }
     
-    // Function to handle image upload separately
+    /// Handles uploading image files from the request.
+    ///
+    /// This function saves each file to the "Public/Images/" directory and collects the new filenames.
+    ///
+    /// - Parameters:
+    ///   - req: The incoming request.
+    ///   - files: An array of File objects to upload.
+    /// - Returns: A future array of strings containing the new filenames.
     private func imageUpload(req: Request, files: [File]) -> EventLoopFuture<[String]> {
         let directory = "Public/jandy-dev-images/"
         let allowedExtensions = ["png", "jpeg", "jpg", "gif"]
@@ -92,7 +126,15 @@ class BlogPostController {
         return EventLoopFuture.andAllSucceed(fileSaveFutures, on: req.eventLoop).map { storedFilenames }
     }
     
-    // Function to replace markdown image references with the new filenames
+    /// Replaces Markdown image references with new filenames.
+    ///
+    /// This function uses the Ink Markdown parser to modify image references. It looks for Markdown image syntax,
+    /// then replaces the image URL with the new filename from the stored filenames array.
+    ///
+    /// - Parameters:
+    ///   - markdown: The original Markdown text.
+    ///   - filenames: An array of new filenames from the image upload process.
+    /// - Returns: The updated HTML string with new image references.
     private func replaceImageReferences(in markdown: String, with filenames: [String]) -> String {
         var filenameIndex = 0
         
@@ -114,7 +156,10 @@ class BlogPostController {
         return updatedHTML
     }
     
-    // Handle deleting a blog post (DELETE request)
+    /// Deletes a blog post given its ID.
+    ///
+    /// - Parameter req: The incoming request.
+    /// - Returns: A future HTTPStatus indicating success.
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
         return BlogPost.find(req.parameters.get("id"), on: req.db)
             .unwrap(or: Abort(.notFound))
@@ -122,7 +167,10 @@ class BlogPostController {
             .transform(to: .ok)
     }
     
-    //Search functionality to filter blog posts
+    /// Searches for blog posts that match the given query in their tags or body.
+    ///
+    /// - Parameter req: The incoming request.
+    /// - Returns: A future view with the search results rendered using the "blogs" Leaf template.
     func search(req: Request) throws -> EventLoopFuture<View> {
         guard let query = req.query[String.self, at: "query"] else {
             throw Abort(.badRequest, reason: "Missing search query")

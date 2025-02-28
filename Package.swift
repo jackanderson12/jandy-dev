@@ -16,7 +16,9 @@ let package = Package(
         // 🔵 Swift ORM (queries, models, relations, etc) built on SQLite.
         .package(url: "https://github.com/vapor/fluent-sqlite-driver.git", from: "4.0.0"),
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.0.0"),
-        .package(url: "https://github.com/johnsundell/ink.git", from: "0.1.0")
+        .package(url: "https://github.com/johnsundell/ink.git", from: "0.1.0"),
+        // 🔵 Non-blocking, event-driven networking for Swift. Used for custom executors
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.65.0")
     ],
     targets: [
         .executableTarget(
@@ -27,7 +29,9 @@ let package = Package(
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
                 .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
-                .product(name: "Ink", package: "ink")
+                .product(name: "Ink", package: "ink"),
+                .product(name: "NIOCore", package: "swift-nio"),
+                .product(name: "NIOPosix", package: "swift-nio")
             ]
         ),
         .testTarget(name: "AppTests", dependencies: [
@@ -40,7 +44,9 @@ let package = Package(
             .product(name: "Fluent", package: "fluent"),
             .product(name: "FluentSQLiteDriver", package: "fluent-sqlite-driver"),
             .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
-            .product(name: "Ink", package: "ink")
+            .product(name: "Ink", package: "ink"),
+            .product(name: "NIOCore", package: "swift-nio"),
+            .product(name: "NIOPosix", package: "swift-nio")
         ])
     ]
 )

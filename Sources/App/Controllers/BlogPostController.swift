@@ -14,7 +14,7 @@ import Ink
 /// - Creating new blog posts (with image uploads and Markdown processing)
 /// - Deleting posts and searching posts
 class BlogPostController {
-    /// Retrieves all blog posts from the database and renders the "blogs" Leaf template.
+    /// Retrieves all blog posts from the database and renders the "blog_posts" Leaf template.
     ///
     /// - Parameter req: The incoming request.
     /// - Returns: A future view that displays all blog posts.

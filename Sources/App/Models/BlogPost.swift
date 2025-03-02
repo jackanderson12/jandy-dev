@@ -12,7 +12,7 @@ import Ink
 /// This model is stored in the database table named "blogs".
 final class BlogPost: Model, Content {
     // Specifies the database table name for this model.
-    static let schema = "blogs"
+    static let schema = "blog_posts"
 
     /// The unique identifier for each blog post.
     @ID(key: .id)
@@ -66,7 +66,7 @@ struct CreateBlogPost: Migration {
     /// The prepare function runs when the migration is applied.
     /// It defines the schema (table structure) for the "blogs" table.
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        database.schema("blogs")
+        database.schema("blog_posts")
             .id()  // Creates a primary key column "id" of type UUID.
             .field("body", .string, .required)  // Adds a required string column "body" for the Markdown content.
             .field("tags", .string, .required)  // Adds a required string column "tags" for storing tags.

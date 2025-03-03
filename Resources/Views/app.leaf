@@ -92,7 +92,7 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/authentication.png">
+                            <img src="/jandy-dev-images/chefm8-images/authentication_page.png">
                         </div>
                         <div class="swiper-slide">
                             <img src="/jandy-dev-images/chefm8-images/cookbook_page.png">
@@ -220,9 +220,6 @@
                          <!-- Slides -->
                          <div class="swiper-slide">
                              <img src="/jandy-dev-images/roebling-images/hero_desktop.png">
-                         </div>
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/roebling-images/hero_mobile.PNG">
                          </div>
                        </div>
                        <!-- If we need pagination -->

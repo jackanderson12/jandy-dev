@@ -16,7 +16,7 @@ enum Chefm8Feature: String {
     case textScanner = "text_scanner.png"
     case barcodeScanner = "barcode_scanner.png"
     case shoppingCart = "shopping_cart_page.png"
-    case share = "share_fuctionality.png"
+    case share = "share_functionality.png"
     case shareText = "share_text_message.PNG"
     case map = "map_page.PNG"
     case lookAroundPreview = "map_lookaround_preview.PNG"
@@ -39,7 +39,7 @@ enum Chefm8Feature: String {
         case .shoppingCart:
             return "Create a shopping list directly from your favorite recipes, simply click the cart button on the recipe info page to add this recipe to your shopping cart."
         case .share:
-            return "Share your cart or a recipe with a friend over a variety of mediums. "
+            return "Share your cart or a recipe with a friend over a variety of mediums."
         case .shareText:
             return "Sharing formats the grocery list or recipe objects into easily readable information to whoever you maybe sharing with."
         case .map:
@@ -60,16 +60,22 @@ enum Chefm8Feature: String {
 }
 
 enum GamblitFeature: String {
-    case feed = "feed_page.png"
-    case event = "event_page.png"
-    case historical = "historical_page.png"
+    case feed = "feed_page.PNG"
+    case games = "games_view_page.PNG"
+    case event = "event_view_page.PNG"
+    case gamble = "create_gamble_page.PNG"
+    case historical = "historical_page.PNG"
 
     var details: String {
         switch self {
         case .feed:
             return "Stay updated with the latest bets and sports news in your feed."
+        case .games:
+            return ""
         case .event:
             return "Browse upcoming sports events and place your bets."
+        case .gamble:
+            return ""
         case .historical:
             return "Analyze past betting trends and improve your strategy."
         }
@@ -84,14 +90,14 @@ enum GamblitFeature: String {
 }
 
 enum RoeblingFeature: String {
-    case home = "home_page.png"
+    case home = "hero_desktop.png"
     case dashboard = "dashboard_page.png"
     case form = "form_page.png"
 
     var details: String {
         switch self {
         case .home:
-            return "Overview of financial opportunities for small businesses."
+            return "Landing page for Roebling, illustrating to potential customers, what our product is and who we are targeting."
         case .dashboard:
             return "Track financial applications and monitor loan statuses."
         case .form:

@@ -102,6 +102,10 @@
         padding: var(--spacing-sm); /* Add some spacing */
     }
     
+    .hero .two-column p a {
+        color: var(--color-secondary);
+    }
+    
     /* CHEFM8 SECTION */
     .chefm8-section {
         width: 100%;
@@ -303,6 +307,10 @@
         align-items: center;
         background-color: var(--color-primary);
         padding: var(--spacing-xl) 0;
+    }
+    
+    .hero .two-column p a {
+        color: var(--color-secondary);
     }
     
     /* CHEFM8 SECTION */

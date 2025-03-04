@@ -2,16 +2,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='shortcut icon' type='image/x-icon' href='/jandy-dev-images/favicon.ico'/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/Styles/base.css">
-    <link rel="stylesheet" href="/Styles/app.css">
+        <title>App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel='shortcut icon' type='image/x-icon' href='/jandy-dev-images/favicon.ico'/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap"
+                    rel="stylesheet">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+                        <link rel="stylesheet" href="/Styles/base.css">
+                            <link rel="stylesheet" href="/Styles/app.css">
 </head>
 
 <body>
@@ -88,57 +88,57 @@
                 <div class="col-left">
                     <!-- Slider main container -->
                     <div class="swiper">
-                      <!-- Additional required wrapper -->
-                      <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/authentication_page.png">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/authentication_page.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/cookbook_page.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/recipe_info_page.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/add_recipe_page.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/text_scanner.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/barcode_scanner.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/shopping_cart_page.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/share_functionality.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/share_text_message.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/recipe_search.jpeg">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/map_page.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/chefm8-images/map_lookaround_preview.PNG">
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/cookbook_page.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/recipe_info_page.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/add_recipe_page.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/text_scanner.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/barcode_scanner.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/shopping_cart_page.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/share_functionality.png">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/share_text_message.PNG">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/recipe_search.jpeg">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/map_page.PNG">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/jandy-dev-images/chefm8-images/map_lookaround_preview.PNG">
-                        </div>
-                      </div>
-                      <!-- If we need pagination -->
-                      <div class="swiper-pagination"></div>
-
-                      <!-- If we need navigation buttons -->
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                        
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
                 <div class="col-right">
                     <p id="feature-text">
-                        #feature("cookbook_page.png")
+                    #feature("cookbook_page.png")
                     </p>
                 </div>
             </div>
@@ -149,98 +149,120 @@
     
     <!-- Gamblit Section -->
     #if(id == "gamblit"):
-     <section class="gamblit-section">
-         <div class="section-container">
-             <h2>Gamblit</h2>
-             <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
-             <ul class="app-overview">
-                 <li>
-                     Gamblit is a scoial media and sports gambling visualization app. It creates a fun
-                     environment for users to share their gambles with their friends.
-                 </li>
-             </ul>
-             <h5>Feature Preview</h5>
-             <div class="two-column">
-                 <div class="col-left">
-                     <!-- Slider main container -->
-                     <div class="swiper">
-                       <!-- Additional required wrapper -->
-                       <div class="swiper-wrapper">
-                         <!-- Slides -->
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/games_view_page.PNG">
-                         </div>
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/event_view_page.PNG">
-                         </div>
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/create_gamble_page.PNG">
-                         </div>
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/gamblit-images/feed_page.PNG">
-                         </div>
-                       </div>
-                       <!-- If we need pagination -->
-                       <div class="swiper-pagination"></div>
-
-                       <!-- If we need navigation buttons -->
-                       <div class="swiper-button-prev"></div>
-                       <div class="swiper-button-next"></div>
-                     </div>
-                 </div>
-                 <div class="col-right">
-                     <p id="feature-text">
-                         #feature("games_view_page.png")
-                     </p>
-                 </div>
-             </div>
-         </div>
-     </section>
-     #endif
-     <!-- End of Gamblit -->
-     
-     <!-- Roebling Section -->
-     #if(id == "roebling"):
-     <section class="roebling-section">
-         <div class="section-container">
-             <h2>Roebling</h2>
-             <a href="https://roebling.us">Roebling Link</a>
-             <ul class="app-overview">
-                 <li>
-                     Roebling is a web application to help small businesses secure loans for crucial equipment.
+    <section class="gamblit-section">
+        <div class="section-container">
+            <h2>Gamblit</h2>
+            <a href="https://apps.apple.com/us/app/chefm8/id6450680970">View on App Store</a>
+            <ul class="app-overview">
+                <li>
+                    Gamblit is a social media and sports gambling visualization app. It creates a fun
+                    environment for users to share their gambles with their friends.
                 </li>
-             </ul>
-             <h5>Feature Preview</h5>
-             <div class="two-column">
-                 <div class="col-left">
-                     <!-- Slider main container -->
-                     <div class="swiper">
-                       <!-- Additional required wrapper -->
-                       <div class="swiper-wrapper">
-                         <!-- Slides -->
-                         <div class="swiper-slide">
-                             <img src="/jandy-dev-images/roebling-images/hero_desktop.png">
-                         </div>
-                       </div>
-                       <!-- If we need pagination -->
-                       <div class="swiper-pagination"></div>
-
-                       <!-- If we need navigation buttons -->
-                       <div class="swiper-button-prev"></div>
-                       <div class="swiper-button-next"></div>
-
-                     </div>
-                 </div>
-                 <div class="col-right">
-                     <p id="feature-text">
-                         #feature("hero_desktop.png")
-                     </p>
-                 </div>
-             </div>
-         </div>
-     </section>
-     #endif
-     <!-- End of Roebling Section -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-     <script type="module" src="/Javascript/swiper.js"></script>
+                <li>
+                    Utilizing <strong>the-odds-api</strong> for sports gambling data, gamblit presents all major sports book lines for events and games happening today and in the future.
+                </li>
+                <li>
+                    <strong>Firebase Firestore Database</strong> is used for storing all users and affiliated post data.
+                </li>
+                <li>
+                    Leveraged <strong>Swift's Async/Await Concurrency model</strong> to manage asynchronous data fetching, ensuring smooth performance.
+                </li>
+                <li>Implemented a <strong>Google Cloud Function</strong> using <strong>Python</strong> and <strong>Flask</strong>, paired with <strong>Firebase</strong> authentication, to securely process API calls and conceal API keys.
+                </li>
+                <li>
+                    <strong>Swift Charts</strong> framework is used to construct strong visuals of historical line data.
+                </li>
+                <li>
+                    Gamblit is still in production, but check out the projects portion of my blog for more information.
+                </li>
+            </ul>
+            <h5>Feature Preview</h5>
+            <div class="two-column">
+                <div class="col-left">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/gamblit-images/gamblit_authentication.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/gamblit-images/games_view_page.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/gamblit-images/event_view_page.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/gamblit-images/create_gamble_page.PNG">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/gamblit-images/feed_page.PNG">
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                        
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                <div class="col-right">
+                    <p id="feature-text">
+                    #feature("games_view_page.png")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    #endif
+    <!-- End of Gamblit -->
+    
+    <!-- Roebling Section -->
+    #if(id == "roebling"):
+    <section class="roebling-section">
+        <div class="section-container">
+            <h2>Roebling</h2>
+            <a href="https://roebling.us">Roebling Link</a>
+            <ul class="app-overview">
+                <li>
+                    Roebling is a web application to help small businesses secure loans for crucial equipment.
+                </li>
+                <li> Utilizing <strong>Ruby on Rails</strong>, <strong>SQL Server</strong>, <strong>html</strong>, <strong>css</strong>, and <strong>Javascript</strong> to deliver the platform.
+                </li>
+            </ul>
+            <h5>Feature Preview</h5>
+            <div class="two-column">
+                <div class="col-left">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="/jandy-dev-images/roebling-images/hero_desktop.png">
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                        
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        
+                    </div>
+                </div>
+                <div class="col-right">
+                    <p id="feature-text">
+                    #feature("hero_desktop.png")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    #endif
+    <!-- End of Roebling Section -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/Javascript/swiper.js"></script>
 </body>

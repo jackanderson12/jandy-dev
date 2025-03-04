@@ -25,7 +25,7 @@ enum Chefm8Feature: String {
     var details: String {
         switch self {
         case .authentication:
-            return "Create and sign in anonymously, using an email, google, or apple. Created using Google Firebase Authentication."
+            return "Create and sign in anonymously, using an email, Google, or Apple. Created using Google Firebase Authentication."
         case .cookbook:
             return "Access your favorite recipes with ease in the interactive cookbook. Recipes are stored on device, utilizing CoreData to save all recipe information."
         case .recipeInfo:
@@ -60,6 +60,7 @@ enum Chefm8Feature: String {
 }
 
 enum GamblitFeature: String {
+    case authentication = "gamblit_authentication.PNG"
     case feed = "feed_page.PNG"
     case games = "games_view_page.PNG"
     case event = "event_view_page.PNG"
@@ -68,14 +69,16 @@ enum GamblitFeature: String {
 
     var details: String {
         switch self {
+        case .authentication:
+            return "Create and sign in anonymously, Google, or Apple. Created using Google Firebase Authentication."
         case .feed:
-            return "Stay updated with the latest bets and sports news in your feed."
+            return "Stay updated with the latest bets from the people that you are following across all the major sports books to stay ahead of the odds changes."
         case .games:
-            return ""
+            return "Search through a variety of games filtered by sport you are wishing to see the odds for and pick your game."
         case .event:
-            return "Browse upcoming sports events and place your bets."
+            return "Once you have chosen you game or event, see the current odds from all major sports books."
         case .gamble:
-            return ""
+            return "Share your bet with friends and followers. Post your bet alongside a comment with why you think it will hit."
         case .historical:
             return "Analyze past betting trends and improve your strategy."
         }

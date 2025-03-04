@@ -70,7 +70,7 @@ enum GamblitFeature: String {
     var details: String {
         switch self {
         case .authentication:
-            return "Create and sign in anonymously, Google, or Apple. Created using Google Firebase Authentication."
+            return "Create and sign in anonymously, with Google, or Apple. Created using Google Firebase Authentication."
         case .feed:
             return "Stay updated with the latest bets from the people that you are following across all the major sports books to stay ahead of the odds changes."
         case .games:

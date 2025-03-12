@@ -82,7 +82,7 @@
                 <li>Leveraged <strong>Swift's Async/Await Concurrency model</strong> to manage asynchronous data fetching, ensuring smooth performance.</li>
                 <li>Implemented a <strong>Google Cloud Function</strong> using <strong>Python</strong> and <strong>Flask</strong>, paired with <strong>Firebase</strong> authentication, to securely process API calls and conceal API keys.</li>
                 <li>Used <strong>NSCache</strong> and <strong>FileManager</strong> to efficiently cache recipe-related images, reducing network requests.</li>
-                <li>Read more about the implementation of ChefM8 <a href="https://jandy.dev/blog_posts/view_post/8CF01C13-D4F5-4780-978D-DBB2A4DD5F53">here</a></li>
+                <li>Read more about the implementation of ChefM8<a href="https://jandy.dev/blog_posts/view_post/8CF01C13-D4F5-4780-978D-DBB2A4DD5F53"> here</a></li>.
             </ul>
             <h5>Feature Preview</h5>
             <div class="two-column">
